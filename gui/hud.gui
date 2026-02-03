@@ -624,6 +624,78 @@ widget = {
 					using = Animation_ShowHide_Standard
 				}
 			}
+			vbox = {
+				state = {
+					name = _show
+					alpha = 1
+					duration = 0.1
+					using = Animation_Curve_Default
+				}
+				state = {
+					name = _hide
+					duration = 0.6
+					alpha = 0
+					using = Animation_Curve_Default
+				}
+				hbox = {
+					name = "tab_government_administration" #tutorial uses this
+					widget_hud_main_tab = {
+						datacontext = "[GetPlayer.GetTopLiege]"
+						visible = "[And(Character.GetGovernment.HasRule( 'noble_families' ),Not(Or(GetPlayer.GetGovernment.IsType( 'celestial_government' ),Or(GetPlayer.GetGovernment.IsType( 'japan_administrative_government' ),GetPlayer.GetGovernment.IsType( 'japan_feudal_government' )))))]"
+						blockoverride "maintab_button"
+						{
+							texture = "gfx/interface/skinned/hud_maintab/maintab_administrative.dds"
+							onclick = "[ToggleGameView( 'government_administration' )]"
+							down = "[IsGameViewOpen( 'government_administration' )]"
+							tooltip = "ADMINISTRATIVE_BUTTON"
+						}
+					}
+					widget_hud_main_tab = {
+						datacontext = "[GetPlayer.GetTopLiege]"
+						visible = "[GetPlayer.GetGovernment.IsType( 'japan_feudal_government' )]"
+						blockoverride "maintab_button"
+						{
+							texture = "gfx/interface/skinned/hud_maintab/maintab_soryo_japan.dds"
+							onclick = "[ToggleGameView( 'government_administration' )]"
+							down = "[IsGameViewOpen( 'government_administration' )]"
+							tooltip = "ADMINISTRATIVE_BUTTON"
+						}
+					}
+					widget_hud_main_tab = {
+						datacontext = "[GetPlayer.GetTopLiege]"
+						visible = "[GetPlayer.GetGovernment.IsType( 'japan_administrative_government' )]"
+						blockoverride "maintab_button"
+						{
+							texture = "gfx/interface/skinned/hud_maintab/maintab_ritsuryo_japan.dds"
+							onclick = "[ToggleGameView( 'government_administration' )]"
+							down = "[IsGameViewOpen( 'government_administration' )]"
+							tooltip = "ADMINISTRATIVE_BUTTON"
+						}
+					}
+					widget_hud_main_tab = {
+						datacontext = "[GetPlayer.GetTopLiege]"
+						visible = "[GetPlayer.GetGovernment.IsType( 'celestial_government' )]"
+						blockoverride "maintab_button"
+						{
+							texture = "gfx/interface/skinned/hud_maintab/maintab_administrative_china.dds"
+							onclick = "[ToggleGameView( 'government_administration' )]"
+							down = "[IsGameViewOpen( 'government_administration' )]"
+							tooltip = "ADMINISTRATIVE_BUTTON"
+						}
+					}
+				}
+				widget_hud_main_tab = {
+					name = "tab_my_realm_tutorial_uses_this"
+					blockoverride "maintab_button"
+					{
+						texture = "gfx/interface/skinned/hud_maintab/maintab_my_realm.dds"
+						onclick = "[ToggleGameView('my_realm')]"
+						shortcut = "my_realm_window"
+						tooltip = "MY_REALM_BUTTON"
+						down = "[IsGameViewOpen('my_realm')]"
+					}
+				}
+			}
 		}
 		# Invisible button to ensure that these shortcuts don't get hidden
 		button = {
