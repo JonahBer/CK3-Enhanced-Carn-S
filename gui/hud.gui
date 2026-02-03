@@ -646,7 +646,6 @@ widget = {
 						onclick = "[VariableSystem.Toggle( 'slave_management_window' )]"
 						shortcut = "my_realm_window"
 						tooltip = "MY_SLAVESMANAGEMENT_BUTTON"
-						down = "[IsGameViewOpen('my_realm')]"
 					}
 				}
 			}
