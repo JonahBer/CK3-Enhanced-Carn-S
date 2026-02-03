@@ -29,15 +29,25 @@
 				using = Window_Margins
 				header_pattern = {
 					layoutpolicy_horizontal = expanding
+					blockoverride "header_text"
+					{
+						text = "SLAVE_MANAGEMENT_WINDOW_TITLE"
+					}
+					blockoverride "button_close"
+					{
+						datacontext = "[GetVariableSystem]"
+						onclick = "[VariableSystem.Toggle( 'slave_management_window' )]"
+					}
 				}
-				blockoverride "header_text"
-				{
-					text = "SLAVE_MANAGEMENT_WINDOW_TITLE"
-				}
-				blockoverride "button_close"
-				{
-					datacontext = "[GetVariableSystem]"
-					onclick = "[VariableSystem.Toggle( 'slave_management_window' )]"
+				## POSITONS
+				vbox_court_positions = {
+					name = "court_positions_subtab_tutorial_uses_this"
+					widgetid = "court_positions_subtab_tutorial_uses_this"
+					datacontext = "[CourtWindow.AccessCourtPositionWindow]"
+					visible = "[CourtWindow.IsShowPositions]"
+					using = Animation_Tab_Switch
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
 				}
 			}
 		}
