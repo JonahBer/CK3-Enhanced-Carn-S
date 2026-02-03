@@ -128,10 +128,10 @@ def main() -> int:
         if not p.exists() or not p.is_file():
             print(f"Skip (not a file): {p}", file=sys.stderr)
             continue
-        original = p.read_text(encoding="utf-8", errors="replace")
+        original = p.read_text(encoding="utf-8-sig", errors="replace")
         formatted = format_paradox(original)
         if formatted != original:
-            p.write_text(formatted, encoding="utf-8")
+            p.write_text(formatted, encoding="utf-8-sig",newline=NEWLINE)
             print(f"Formatted: {p}")
         else:
             print(f"Unchanged: {p}")
