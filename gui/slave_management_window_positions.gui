@@ -125,13 +125,13 @@
 				}
 				margin_right = 20
 			}
-			scrollbox_content {
+			blockoverride scrollbox_content {
 				fixedgridbox ={
 					addcolumn = 900
 					addrow = 92
 					name = "slaves_grid"
 					datamodel = "[CharacterWindow.GetChildren]"
-					visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave' ) )), '(int32)7' )]"
+					visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave' ) )), '(int32)0' )]"
 					layoutpolicy_horizontal = expanding
 					item {
 						datacontext = "[Scope.GetCharacter]"
@@ -139,6 +139,46 @@
 						}
 						portrait_head_small = {
 							#size = { 85 90 }
+						}
+						widget = {
+							position = { 85 0
+							}
+							size = { 800 94
+							}
+							# Name and age
+							acs_character_header = {
+							}
+							### BOTTOM ROW ###
+							widget = {
+								position = { 0 34
+								}
+								size = { 800 60
+								}
+								# Dynasty
+								widget = {
+									size = { 45 40
+									}
+									parentanchor = vcenter|left
+									widgetanchor = vcenter|left
+									coa_house_small = {
+										datacontext = "[Character.GetHouse]"
+										parentanchor = center
+										scale = 0.7
+									}
+								}
+								acs_character_presentation_traits = {
+									position = { 50 0
+									}
+								}
+								acs_military = {
+									position = { 260 0
+									}
+								}
+								acs_character_buttom_right = {
+									parentanchor = top|right
+									widgetanchor = top|right
+								}
+							}
 						}
 					}
 				}
