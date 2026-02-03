@@ -642,7 +642,8 @@ widget = {
 					blockoverride "maintab_button"
 					{
 						texture = "gfx/interface/icons/icon_carn_slave_owner.dds"
-						onclick = "[ToggleGameView( 'character_finder' )]"
+						datacontext = "[GetVariableSystem]"
+						onclick = "[VariableSystem.Toggle( 'slave_management_window' )]"
 						shortcut = "my_realm_window"
 						tooltip = "MY_SLAVESMANAGEMENT_BUTTON"
 						down = "[IsGameViewOpen('my_realm')]"
