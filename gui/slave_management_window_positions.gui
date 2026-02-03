@@ -114,7 +114,7 @@
 			expand = {
 			}
 		}
-		### Court Position Group Foldouts ###
+		### Slave Position Group Foldouts ###
 		scrollbox = {
 			using = Animation_Tab_Switch
 			layoutpolicy_horizontal = expanding
@@ -125,60 +125,21 @@
 				}
 				margin_right = 20
 			}
-			blockoverride "scrollbox_content"
-			{
-				layoutpolicy_horizontal = expanding
-				layoutpolicy_vertical = expanding
-				### Available Court Positions ###
-				fixedgridbox = {
-					name = "court_position_items"
+			scrollbox_content {
+				fixedgridbox ={
+					addcolumn = 900
+					addrow = 92
+					name = "slaves_grid"
+					datamodel = "[CharacterWindow.GetChildren]"
+					visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave' ) )), '(int32)7' )]"
 					layoutpolicy_horizontal = expanding
-					addcolumn = 180
-					addrow = 228
-					setitemsizefromcell = yes
-					datamodel_wrap = 3
-					flipdirection = yes
-					datamodel = "[CourtPositionsWindow.GetCourtPositions]"
-					item = {
-						widget_court_position_item = {
+					item {
+						datacontext = "[Scope.GetCharacter]"
+						size = { 885 94
 						}
-					}
-				}
-				### Denied Court Positions Group Foldout ###
-				vbox = {
-					visible = "[Not( IsDataModelEmpty( CourtPositionsWindow.GetDeniedCourtPositions ) )]"
-					margin_bottom = 8
-					spacing = 4
-					layoutpolicy_horizontal = expanding
-					oncreate = "[BindFoldOutContext]"
-					button_expandable_toggle_field = {
-						blockoverride "text"
-						{
-							text = "[CourtPositionsWindow.GetGroupTitle]"
+						portrait_head_small = {
+							#size = { 85 90 }
 						}
-					}
-					vbox = {
-						visible = "[PdxGuiFoldOut.IsUnfolded]"
-						layoutpolicy_horizontal = expanding
-						layoutpolicy_vertical = expanding
-						fixedgridbox = {
-							name = "court_position_items"
-							layoutpolicy_horizontal = expanding
-							addcolumn = 180
-							addrow = 228
-							setitemsizefromcell = yes
-							datamodel_wrap = 3
-							flipdirection = yes
-							datamodel = "[CourtPositionsWindow.GetDeniedCourtPositions]"
-							item = {
-								widget_court_position_item = {
-								}
-							}
-						}
-					}
-				}
-				blockoverride "scrollbox_expand" {
-					expand = {
 					}
 				}
 			}

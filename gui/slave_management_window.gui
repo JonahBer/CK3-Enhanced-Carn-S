@@ -42,10 +42,8 @@
 				}
 				## POSITONS
 				vbox_slave_positions = {
-					name = "court_positions_subtab_tutorial_uses_this"
-					widgetid = "court_positions_subtab_tutorial_uses_this"
-					datacontext = "[CourtWindow.AccessCourtPositionWindow]"
-					visible = "[CourtWindow.IsShowPositions]"
+					# datacontext = "[CourtWindow.AccessCourtPositionWindow]"
+					# visible = "[CourtWindow.IsShowPositions]"
 					using = Animation_Tab_Switch
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
