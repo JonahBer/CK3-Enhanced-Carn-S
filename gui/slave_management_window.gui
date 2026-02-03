@@ -3,6 +3,7 @@
 	layer = top
 	using = Window_Size_MainTab
 	using = Window_Background_Sidebar
+	datacontext = "[GetVariableSystem]"
 	visible = "[GetVariableSystem.Exists( 'slave_management_window' )]"
 	state = {
 		name = _show
@@ -40,7 +41,7 @@
 					}
 				}
 				## POSITONS
-				vbox_court_positions = {
+				vbox_slave_positions = {
 					name = "court_positions_subtab_tutorial_uses_this"
 					widgetid = "court_positions_subtab_tutorial_uses_this"
 					datacontext = "[CourtWindow.AccessCourtPositionWindow]"

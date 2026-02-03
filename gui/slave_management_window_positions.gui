@@ -54,6 +54,7 @@
 		}
 		### Monthly Income from held positions
 		hbox = {
+			datacontext = "[CourtWindow.GetCourt]"
 			visible = "[Not( IsDataModelEmpty( CourtPositionsWindow.GetHeldPositions ) )]"
 			layoutpolicy_horizontal = expanding
 			hbox = {
