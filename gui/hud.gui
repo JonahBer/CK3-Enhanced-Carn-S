@@ -643,7 +643,7 @@ widget = {
 					{
 						texture = "gfx/interface/icons/icon_carn_slave_owner.dds"
 						datacontext = "[GetVariableSystem]"
-						onclick = "[VariableSystem.Toggle( 'slave_management_window' )]"
+						onclick = "[GetScriptedGui('toggle_slave_management_window').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 						shortcut = "my_realm_window"
 						tooltip = "MY_SLAVESMANAGEMENT_BUTTON"
 					}

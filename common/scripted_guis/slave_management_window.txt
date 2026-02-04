@@ -1,0 +1,12 @@
+﻿toggle_slave_management_window = {
+	effect = {
+		if = {
+			limit = { has_variable = show_slave_management_window
+			}
+			remove_variable = show_slave_management_window
+		}
+		else = {
+			set_variable = show_slave_management_window
+		}
+	}
+}

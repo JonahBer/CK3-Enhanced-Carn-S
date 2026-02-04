@@ -3,8 +3,7 @@
 	layer = top
 	using = Window_Size_MainTab
 	using = Window_Background_Sidebar
-	datacontext = "[GetVariableSystem]"
-	visible = "[GetVariableSystem.Exists( 'slave_management_window' )]"
+	visible = "[And( GetPlayer.IsValid, GetPlayer.MakeScope.Var('show_slave_management_window').IsSet )]"
 	state = {
 		name = _show
 		using = Animation_FadeIn_Quick
@@ -37,7 +36,7 @@
 					blockoverride "button_close"
 					{
 						datacontext = "[GetVariableSystem]"
-						onclick = "[VariableSystem.Toggle( 'slave_management_window' )]"
+						onclick = "[GetScriptedGui('toggle_slave_management_window').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					}
 				}
 				## POSITONS
