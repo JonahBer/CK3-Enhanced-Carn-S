@@ -5,7 +5,7 @@
 			}
 			remove_variable = show_slave_management_window
 			root = {
-				clear_variable_list =secret_society
+				clear_variable_list = secret_society
 			}
 		}
 		else = {

@@ -31,7 +31,7 @@
 					layoutpolicy_horizontal = expanding
 					blockoverride "header_text"
 					{
-						text = "[GetPlayer.MakeScope.Var('child_examination_success_chance').GetValue]"
+						text = "SLAVE_MANAGEMENT_WINDOW_TITLE"
 					}
 					blockoverride "button_close"
 					{
