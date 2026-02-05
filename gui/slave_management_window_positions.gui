@@ -25,9 +25,14 @@
 				margin_right = 20
 			}
 			blockoverride scrollbox_content {
+				layoutpolicy_horizontal = expand
 				dynamicgridbox = {
 					datamodel = "[GetPlayer.MakeScope.GetList('secret_society')]"
+					layoutpolicy_horizontal = expand
+					datamodel_wrap = 1
 					item = {
+						size = { 220 140
+						}
 						flowcontainer = {
 							datacontext = "[Scope.GetCharacter]"
 							portrait_body= {
