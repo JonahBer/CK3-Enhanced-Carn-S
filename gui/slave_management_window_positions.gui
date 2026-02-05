@@ -26,14 +26,12 @@
 			}
 			blockoverride scrollbox_content {
 				dynamicgridbox = {
+					parentanchor = top|hcenter
 					datamodel = "[GetPlayer.MakeScope.GetList('secret_society')]"
 					item = {
 						flowcontainer = {
 							datacontext = "[Scope.GetCharacter]"
-							portrait_head_small = {
-							}
-							text_single = {
-								text = "[Character.GetNameNoTooltip]"
+							widget_courtier_item = {
 							}
 						}
 					}
