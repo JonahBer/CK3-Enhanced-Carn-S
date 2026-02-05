@@ -4,18 +4,22 @@
 			limit = { has_variable = show_slave_management_window
 			}
 			remove_variable = show_slave_management_window
+			root = {
+				clear_variable_list =secret_society
+			}
 		}
 		else = {
 			set_variable = show_slave_management_window
-		}
-		every_living_character = {
-			limit = {
-				has_trait = paranoid
-			}
-			root = {
-				add_to_variable_list = {
-					name = secret_society
-					target = prev
+			every_living_character = {
+				limit = {
+					root = { has_relation_slave = prev
+					}
+				}
+				root = {
+					add_to_variable_list = {
+						name = secret_society
+						target = prev
+					}
 				}
 			}
 		}
