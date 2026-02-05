@@ -1,0 +1,11 @@
+﻿my_player_has_slaves = {
+	scope = character
+	trigger = {
+		put whatever you can reliably check here
+		if you truly have a relation type "slave" you can check it here in script
+		any_relation = {
+			type = slave
+			exists = prev   # or just always true; depends on relation iterator
+		}
+	}
+}

@@ -31,18 +31,15 @@
 					layoutpolicy_horizontal = expanding
 					blockoverride "header_text"
 					{
-						text = "SLAVE_MANAGEMENT_WINDOW_TITLE"
+						text = "[GetPlayer.MakeScope.Var('child_examination_success_chance').GetValue]"
 					}
 					blockoverride "button_close"
 					{
-						datacontext = "[GetVariableSystem]"
 						onclick = "[GetScriptedGui('toggle_slave_management_window').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 					}
 				}
 				## POSITONS
 				vbox_slave_positions = {
-					# datacontext = "[CourtWindow.AccessCourtPositionWindow]"
-					# visible = "[CourtWindow.IsShowPositions]"
 					using = Animation_Tab_Switch
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding

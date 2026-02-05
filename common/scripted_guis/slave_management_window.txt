@@ -8,5 +8,16 @@
 		else = {
 			set_variable = show_slave_management_window
 		}
+		every_living_character = {
+			limit = {
+				has_trait = paranoid
+			}
+			root = {
+				add_to_variable_list = {
+					name = secret_society
+					target = prev
+				}
+			}
+		}
 	}
 }

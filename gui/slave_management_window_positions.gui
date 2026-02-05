@@ -2,7 +2,6 @@
 	type vbox_slave_positions = vbox {
 		layoutpolicy_horizontal = expanding
 		spacing = 5
-		### Header - Monthly Salaries ###
 		hbox = {
 			layoutpolicy_horizontal = expanding
 			margin = { 15 15
@@ -10,32 +9,6 @@
 			margin_bottom = 10
 			spacing = 10
 			expand = {
-			}
-			### TODO: Monthly Salaries
-			vbox = {
-				name = "salaries_tutorial_uses_this"
-				datacontext = "[CourtPositionsWindow.CourtPositionsExpenseBreakdown]"
-				visible = "[CourtPositionsWindow.HasEmployedPositions]"
-				minimumsize = { 200 0
-				}
-				layoutpolicy_vertical = expanding
-				tooltipwidget = {
-					widget_value_breakdown_tooltip = {
-					}
-				}
-				vbox = {
-					layoutpolicy_horizontal = expanding
-					text_label_center = {
-						max_width = 250
-						text = "COURT_POSITIONS_WINDOW_MONTHLY_SALARY"
-					}
-					text_single = {
-						max_width = 250
-						text = "[CourtPositionsWindow.TotalPaidSalaries]"
-						default_format = "#high"
-						align = nobaseline
-					}
-				}
 			}
 			expand = {
 			}
@@ -52,18 +25,16 @@
 				margin_right = 20
 			}
 			blockoverride scrollbox_content {
-				fixedgridbox ={
-					addcolumn = 900
-					addrow = 92
-					name = "slaves_grid"
-					visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave' ) )), '(int32)0' )]"
-					layoutpolicy_horizontal = expanding
-					item {
-						datacontext = "[CharacterWindow.GetRelationsOfType( GetRelation( 'slave' ) )]"
-						size = { 885 94
-						}
-						portrait_head_small = {
-							#size = { 85 90 }
+				dynamicgridbox = {
+					datamodel = "[GetPlayer.MakeScope.GetList('secret_society')]"
+					item = {
+						flowcontainer = {
+							datacontext = "[Scope.GetCharacter]"
+							portrait_head_small = {
+							}
+							text_single = {
+								text = "[Character.GetNameNoTooltip]"
+							}
 						}
 					}
 				}

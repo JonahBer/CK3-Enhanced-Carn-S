@@ -639,10 +639,12 @@ widget = {
 				}
 				widget_hud_main_tab = {
 					name = "tab_my_slave_management"
+					datacontext = "[GetPlayer]"
+					# visible = "[EqualTo_int32( Character.GetRelationCountOfType( GetRelation('slave') ), '(int32)0' )]"
+					# enabled = "[EqualTo_int32( '(int32)0', '(int32)1' )]"
 					blockoverride "maintab_button"
 					{
 						texture = "gfx/interface/icons/icon_carn_slave_owner.dds"
-						datacontext = "[GetVariableSystem]"
 						onclick = "[GetScriptedGui('toggle_slave_management_window').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 						shortcut = "my_realm_window"
 						tooltip = "MY_SLAVESMANAGEMENT_BUTTON"
