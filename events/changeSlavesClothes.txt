@@ -20,12 +20,20 @@ changeSlavesClothes.1 = {
 					}
 				}
 				save_scope_as = slave_1
+				hidden_effect = {
+					scope:slave_1 = {carn_undress_character_effect = yes
+					}
+				}
 			}
 			else_if = {
 				limit = { prev = { var:tmp_count = 1
 					}
 				}
 				save_scope_as = slave_2
+				hidden_effect = {
+					scope: slave_2 = {carn_undress_character_effect = yes
+					}
+				}
 			}
 			# Add this slave to the owner's list (same pattern as your toggle)
 			root = {
@@ -51,11 +59,13 @@ changeSlavesClothes.1 = {
 		trigger = { exists = scope:slave_1
 		}
 		character = scope:slave_1
+		animation = shame
 	}
 	left_portrait = {
 		trigger = { exists = scope:slave_2
 		}
 		character = scope:slave_2
+		animation = shame
 	}
 	option = { name = naked.1.a
 	}
