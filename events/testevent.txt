@@ -1,0 +1,7 @@
+﻿namespace = example
+example.1 = {
+	desc = example.1.desc
+	option = {
+		name = example.1.a
+	}
+}

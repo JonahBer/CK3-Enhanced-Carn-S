@@ -1,0 +1,68 @@
+﻿namespace = changeSlavesClothes
+changeSlavesClothes.1 = {
+	type = character_event
+	title = changeSlavesClothes.1.t
+	desc  = changeSlavesClothes.1.desc
+	lower_left_portrait = root
+	immediate = {
+		set_variable = { name = tmp_count value = 0
+		}
+		root = { clear_variable_list = secret_society
+		}
+		every_living_character = {
+			limit = {
+				root = { has_relation_slave = prev
+				}   # same working direction as your toggle
+			}
+			# If prev.tmp_count == 0/1, save this slave as scope
+			if = {
+				limit = { prev = { var:tmp_count = 0
+					}
+				}
+				save_scope_as = slave_1
+			}
+			else_if = {
+				limit = { prev = { var:tmp_count = 1
+					}
+				}
+				save_scope_as = slave_2
+			}
+			# Add this slave to the owner's list (same pattern as your toggle)
+			root = {
+				add_to_variable_list = {
+					name = secret_society
+					target = prev
+				}
+			}
+			# Increment counter on prev (the event owner), not on the iterated slave
+			prev = { change_variable = { name = tmp_count add = 1
+				}
+			}
+			# Cap at 2 (check prev.tmp_count)
+			if = {
+				limit = { prev = { var:tmp_count >= 2
+					}
+				}
+				break = yes
+			}
+		}
+	}
+	right_portrait = {
+		trigger = { exists = scope:slave_1
+		}
+		character = scope:slave_1
+	}
+	left_portrait = {
+		trigger = { exists = scope:slave_2
+		}
+		character = scope:slave_2
+	}
+	option = { name = naked.1.a
+	}
+	option = { name = cloth.1.b
+	}
+	option = { name = robe.1.c
+	}
+	after = { remove_variable = tmp_count
+	}
+}
