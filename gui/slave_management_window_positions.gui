@@ -25,17 +25,99 @@
 				margin_right = 20
 			}
 			blockoverride scrollbox_content {
-				layoutpolicy_horizontal = expand
+				layoutpolicy_horizontal = expanding
 				dynamicgridbox = {
 					datamodel = "[GetPlayer.MakeScope.GetList('secret_society')]"
-					layoutpolicy_horizontal = expand
+					layoutpolicy_horizontal = expanding
 					datamodel_wrap = 1
 					item = {
-						size = { 220 140
-						}
 						flowcontainer = {
+							name = "big flow"
+							max_width = 340
+							max_height = 340
+							min_width = 340
+							min_height = 340
+							allow_outside = no
+							margin = { 8 10
+							}
+							direction = horizontal
 							datacontext = "[Scope.GetCharacter]"
-							portrait_body= {
+							flowcontainer = {
+								direction = vertical
+								flowcontainer = {
+									resizeparent = no
+									parentanchor = top|hcenter
+									text_single = {
+										text = "[Character.GetFullNameNoTooltip]"
+										align = center
+										fontsize = 21
+										max_width = 170
+										min_width = 170
+									}
+									background = {
+										using=Background_Area_ExtraDark
+										margin_top = 10
+										margin_left = 20
+										margin_right = 20
+										margin_bottom = 20
+									}
+								}
+								portrait_body= {
+								}
+								background = {
+									using = Background_Area
+									margin_bottom = 20
+								}
+							}
+							flowcontainer = {
+								name = "stat flow"
+								min_width = 100
+								min_height = 300
+								layoutpolicy_vertical = expanding
+								layoutpolicy_horizontal = expanding
+								scrollarea = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+									scrollwidget = {
+										min_width = 120
+										max_width = 120
+										max_height = 340
+										min_height = 340
+										flowcontainer = {
+											direction = vertical
+											resizeparent = yes
+											text_single = {
+												text = "hi"
+												align = left
+												autoresize = yes
+											}
+											text_single = {
+												text = "[Character.GetFullNameNoTooltip]"
+												align = center
+												autoresize = yes
+											}
+											text_single = {
+												text = "[Character.GetFullNameNoTooltip]"
+												align = center
+												autoresize = yes
+											}
+											text_single = {
+												text = "[Character.GetFullNameNicknamed]"
+												align = center
+												autoresize = yes
+											}
+										}
+									}
+									scrollbarpolicy_horizontal = always_off
+									scrollbar_vertical = {
+										using = editor_vertical_scrollbar
+									}
+								}
+								background = {
+									using = Background_Area
+									margin_top = 10
+									margin_bottom = 10
+								}
 							}
 						}
 					}
