@@ -162,12 +162,14 @@
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
 					direction = vertical
+					spacing = 40
 					flowcontainer = {
 						name = "First Row"
 						direction = horizontal
 						min_width = 1280
 						max_width = 1280
 						min_height = 400
+						spacing = 30
 						flowcontainer = {
 							name = "greatwife"
 							direction = vertical
