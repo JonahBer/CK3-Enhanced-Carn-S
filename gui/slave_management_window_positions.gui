@@ -27,7 +27,7 @@
 			blockoverride scrollbox_content {
 				layoutpolicy_horizontal = expanding
 				dynamicgridbox = {
-					datamodel = "[GetPlayer.MakeScope.GetList('slave_list')]"
+					datamodel = "[GetPlayer.MakeScope.GetList('decorative_slaves')]"
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
 					#flipdirection = yes
@@ -196,7 +196,7 @@
 										layoutpolicy_horizontal = expanding
 										min_height = 380
 										dynamicgridbox = {
-											datamodel = "[GetPlayer.MakeScope.GetList('slave_list')]"
+											datamodel = "[GetPlayer.MakeScope.GetList('great_slaves')]"
 											flipdirection = yes
 											item = {
 												flowcontainer = {
@@ -320,7 +320,7 @@
 										layoutpolicy_horizontal = expanding
 										min_height = 380
 										dynamicgridbox = {
-											datamodel = "[GetPlayer.MakeScope.GetList('slave_list')]"
+											datamodel = "[GetPlayer.MakeScope.GetList('secondary_slaves')]"
 											flipdirection = yes
 											item = {
 												flowcontainer = {
@@ -445,7 +445,7 @@
 									layoutpolicy_horizontal = expanding
 									min_height = 380
 									dynamicgridbox = {
-										datamodel = "[GetPlayer.MakeScope.GetList('slave_list')]"
+										datamodel = "[GetPlayer.MakeScope.GetList('concubine_slaves')]"
 										flipdirection = yes
 										item = {
 											flowcontainer = {
@@ -569,7 +569,7 @@
 									layoutpolicy_horizontal = expanding
 									min_height = 380
 									dynamicgridbox = {
-										datamodel = "[GetPlayer.MakeScope.GetList('slave_list')]"
+										datamodel = "[GetPlayer.MakeScope.GetList('decorative_slaves')]"
 										flipdirection = yes
 										item = {
 											flowcontainer = {

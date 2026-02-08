@@ -1,4 +1,4 @@
-﻿# slave_list -> decorative_slaves | concubine_slaves | secondary_slaves | great_slaves
+﻿# decorative_slaves -> decorative_slaves | concubine_slaves | secondary_slaves | great_slaves
 toggle_slave_management_window = {
 	effect = {
 		if = {
@@ -6,7 +6,10 @@ toggle_slave_management_window = {
 			}
 			remove_variable = show_slave_management_window
 			root = {
-				clear_variable_list = slave_list
+				clear_variable_list = decorative_slaves
+				clear_variable_list = concubine_slaves
+				clear_variable_list = secondary_slaves
+				clear_variable_list = great_slaves
 			}
 		}
 		else = {
@@ -19,7 +22,44 @@ toggle_slave_management_window = {
 				}
 				root = {
 					add_to_variable_list = {
-						name = slave_list
+						name = decorative_slaves
+						target = prev
+					}
+				}
+			}
+			every_courtier_or_guest = {
+				limit = {
+					root = { has_relation_slave = prev
+					}
+					has_character_flag = concubine_slave_flag
+				}
+				root = {
+					add_to_variable_list = {
+						name = concubine_slaves
+						target = prev
+					}
+				}
+			}
+			every_courtier_or_guest = {
+				limit = {
+					root = { has_relation_slave = prev
+					}
+					has_character_flag = secondary_slave_flag
+				}
+				root = {
+					add_to_variable_list = {
+						name = secondary_slaves
+						target = prev
+					}
+				}
+			}
+			every_courtier_or_guest = {
+				limit = {
+					has_character_flag = great_slave_flag
+				}
+				root = {
+					add_to_variable_list = {
+						name = great_slaves
 						target = prev
 					}
 				}
