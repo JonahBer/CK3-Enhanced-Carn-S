@@ -3,7 +3,7 @@
 	layer = top
 	using = Window_Size_MainTab
 	using = Window_Background_Sidebar
-	size = { 1200 1000
+	size = { 600 1000
 	}
 	visible = "[And( GetPlayer.IsValid, GetPlayer.MakeScope.Var('show_slave_management_window').IsSet )]"
 	state = {
