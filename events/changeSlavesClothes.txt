@@ -7,7 +7,7 @@ changeSlavesClothes.1 = {
 	immediate = {
 		set_variable = { name = tmp_count value = 0
 		}
-		root = { clear_variable_list = secret_society
+		root = { clear_variable_list = slave_list
 		}
 		every_living_character = {
 			limit = {
@@ -38,7 +38,7 @@ changeSlavesClothes.1 = {
 			# Add this slave to the owner's list (same pattern as your toggle)
 			root = {
 				add_to_variable_list = {
-					name = secret_society
+					name = slave_list
 					target = prev
 				}
 			}

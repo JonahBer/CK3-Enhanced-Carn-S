@@ -1,23 +1,25 @@
-﻿toggle_slave_management_window = {
+﻿# slave_list -> decorative_slaves | concubine_slaves | secondary_slaves | great_slaves
+toggle_slave_management_window = {
 	effect = {
 		if = {
 			limit = { has_variable = show_slave_management_window
 			}
 			remove_variable = show_slave_management_window
 			root = {
-				clear_variable_list = secret_society
+				clear_variable_list = slave_list
 			}
 		}
 		else = {
 			set_variable = show_slave_management_window
-			every_living_character = {
+			every_courtier_or_guest = {
 				limit = {
 					root = { has_relation_slave = prev
 					}
+					has_character_flag = decorative_slave_flag
 				}
 				root = {
 					add_to_variable_list = {
-						name = secret_society
+						name = slave_list
 						target = prev
 					}
 				}

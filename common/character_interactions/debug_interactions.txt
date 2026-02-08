@@ -1,0 +1,20 @@
+﻿debug_add_flag_interaction = {
+	category = interaction_debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_add_flag_interaction_desc
+	on_accept = {
+		# Replace MY_FLAG with your flag name (no spaces)
+		scope:recipient = {add_character_flag = { flag = decorative_slave_flag
+			}
+		}
+	}
+	ai_potential = { always = no
+	}
+}
