@@ -29,11 +29,14 @@
 				dynamicgridbox = {
 					datamodel = "[GetPlayer.MakeScope.GetList('secret_society')]"
 					layoutpolicy_horizontal = expanding
-					datamodel_wrap = 1
+					layoutpolicy_vertical = expanding
+					#flipdirection = yes
+					maxhorizontalslots = 1
 					item = {
 						flowcontainer = {
 							name = "big flow"
-							max_width = 340
+							parentanchor = hcenter
+							max_width = 500
 							max_height = 340
 							min_width = 340
 							min_height = 340
@@ -71,8 +74,8 @@
 							}
 							flowcontainer = {
 								name = "stat flow"
-								min_width = 100
-								min_height = 300
+								min_width = 221
+								min_height = 320
 								layoutpolicy_vertical = expanding
 								layoutpolicy_horizontal = expanding
 								scrollarea = {
