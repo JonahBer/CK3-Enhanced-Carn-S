@@ -3,7 +3,7 @@
 	layer = top
 	using = Window_Size_MainTab
 	using = Window_Background_Sidebar
-	size = { 600 1000
+	size = { 1400 1000
 	}
 	visible = "[And( GetPlayer.IsValid, GetPlayer.MakeScope.Var('show_slave_management_window').IsSet )]"
 	state = {
@@ -41,7 +41,7 @@
 					}
 				}
 				## POSITONS
-				vbox_slave_positions = {
+				vbox_slave_positions_tiers = {
 					using = Animation_Tab_Switch
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
