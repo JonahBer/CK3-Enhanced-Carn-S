@@ -21,6 +21,7 @@ toggle_slave_management_window = {
 					has_character_flag = decorative_slave_flag
 				}
 				remove_character_flag = concubine_slave_haircut
+				remove_character_flag = secondary_slave_haircut
 				add_character_flag = wearing_revealing_clothes_2
 				add_character_flag = decorative_slave_haircut
 				root = {
@@ -37,6 +38,7 @@ toggle_slave_management_window = {
 					has_character_flag = concubine_slave_flag
 				}
 				remove_character_flag = decorative_slave_haircut
+				remove_character_flag = secondary_slave_haircut
 				add_character_flag = wearing_revealing_clothes_2
 				add_character_flag = concubine_slave_haircut
 				root = {
