@@ -1,135 +1,4 @@
 ﻿types SlavesPositions{
-	type vbox_slave_positions = vbox {
-		layoutpolicy_horizontal = expanding
-		spacing = 5
-		hbox = {
-			layoutpolicy_horizontal = expanding
-			margin = { 15 15
-			}
-			margin_bottom = 10
-			spacing = 10
-			expand = {
-			}
-			expand = {
-			}
-		}
-		### Slave Position Group Foldouts ###
-		scrollbox = {
-			using = Animation_Tab_Switch
-			layoutpolicy_horizontal = expanding
-			layoutpolicy_vertical = expanding
-			blockoverride "scrollbox_margins"
-			{
-				margin = { 6 10
-				}
-				margin_right = 20
-			}
-			blockoverride scrollbox_content {
-				layoutpolicy_horizontal = expanding
-				dynamicgridbox = {
-					datamodel = "[GetPlayer.MakeScope.GetList('decorative_slaves')]"
-					layoutpolicy_horizontal = expanding
-					layoutpolicy_vertical = expanding
-					#flipdirection = yes
-					maxhorizontalslots = 1
-					item = {
-						flowcontainer = {
-							name = "big flow"
-							parentanchor = hcenter
-							max_width = 500
-							max_height = 340
-							min_width = 340
-							min_height = 340
-							allow_outside = no
-							margin = { 8 10
-							}
-							direction = horizontal
-							datacontext = "[Scope.GetCharacter]"
-							flowcontainer = {
-								direction = vertical
-								flowcontainer = {
-									resizeparent = no
-									parentanchor = top|hcenter
-									text_single = {
-										text = "[Character.GetFullNameNoTooltip]"
-										align = center
-										fontsize = 21
-										max_width = 170
-										min_width = 170
-									}
-									background = {
-										using=Background_Area_ExtraDark
-										margin_top = 10
-										margin_left = 20
-										margin_right = 20
-										margin_bottom = 20
-									}
-								}
-								portrait_body= {
-								}
-								background = {
-									using = Background_Area
-									margin_bottom = 20
-								}
-							}
-							flowcontainer = {
-								name = "stat flow"
-								min_width = 221
-								min_height = 320
-								layoutpolicy_vertical = expanding
-								layoutpolicy_horizontal = expanding
-								scrollarea = {
-									layoutpolicy_horizontal = expanding
-									layoutpolicy_vertical = expanding
-									scrollwidget = {
-										min_width = 120
-										max_width = 120
-										max_height = 340
-										min_height = 340
-										flowcontainer = {
-											direction = vertical
-											resizeparent = yes
-											text_single = {
-												text = "hi"
-												align = left
-												autoresize = yes
-											}
-											text_single = {
-												text = "[Character.GetFullNameNoTooltip]"
-												align = center
-												autoresize = yes
-											}
-											text_single = {
-												text = "[Character.GetFullNameNoTooltip]"
-												align = center
-												autoresize = yes
-											}
-											text_single = {
-												text = "[Character.GetFullNameNicknamed]"
-												align = center
-												autoresize = yes
-											}
-										}
-									}
-									scrollbarpolicy_horizontal = always_off
-									scrollbar_vertical = {
-										using = editor_vertical_scrollbar
-									}
-								}
-								background = {
-									using = Background_Area
-									margin_top = 10
-									margin_bottom = 10
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		expand = {
-		}
-	}
 	type vbox_slave_positions_tiers = vbox {
 		layoutpolicy_horizontal = expanding
 		spacing = 5
@@ -168,7 +37,7 @@
 						direction = horizontal
 						min_width = 1280
 						max_width = 1280
-						min_height = 400
+						min_height = 600
 						spacing = 30
 						flowcontainer = {
 							name = "greatwife"
@@ -185,7 +54,7 @@
 								}
 							}
 							scrollarea = {
-								minimumsize = {430 380
+								minimumsize = {430 600
 								}
 								background = {
 									using = Background_Bottom_Fade
@@ -201,7 +70,6 @@
 											item = {
 												flowcontainer = {
 													name = "big flow"
-													min_width = 420
 													min_height = 335
 													allow_outside = no
 													margin = { 8 10
@@ -228,57 +96,11 @@
 																margin_bottom = 20
 															}
 														}
-														portrait_body= {
+														portrait_body_large= {
 														}
 														background = {
 															using = Background_Area
 															margin_bottom = 20
-														}
-													}
-													flowcontainer = {
-														name = "stat flow"
-														min_width = 221
-														min_height = 320
-														layoutpolicy_vertical = expanding
-														layoutpolicy_horizontal = expanding
-														scrollarea = {
-															layoutpolicy_horizontal = expanding
-															layoutpolicy_vertical = expanding
-															scrollwidget = {
-																flowcontainer = {
-																	direction = vertical
-																	resizeparent = yes
-																	text_single = {
-																		text = "hi"
-																		align = left
-																		autoresize = yes
-																	}
-																	text_single = {
-																		text = "[Character.GetFullNameNoTooltip]"
-																		align = center
-																		autoresize = yes
-																	}
-																	text_single = {
-																		text = "[Character.GetFullNameNoTooltip]"
-																		align = center
-																		autoresize = yes
-																	}
-																	text_single = {
-																		text = "[Character.GetFullNameNicknamed]"
-																		align = center
-																		autoresize = yes
-																	}
-																}
-															}
-															scrollbarpolicy_horizontal = always_on
-															scrollbar_vertical = {
-																using = editor_vertical_scrollbar
-															}
-														}
-														background = {
-															using = Background_Area
-															margin_top = 10
-															margin_bottom = 10
 														}
 													}
 												}
@@ -309,7 +131,7 @@
 								}
 							}
 							scrollarea = {
-								minimumsize = {770 380
+								minimumsize = {770 600
 								}
 								background = {
 									using = Background_Bottom_Fade
@@ -325,7 +147,6 @@
 											item = {
 												flowcontainer = {
 													name = "big flow"
-													min_width = 420
 													min_height = 335
 													allow_outside = no
 													margin = { 8 10
@@ -352,57 +173,11 @@
 																margin_bottom = 20
 															}
 														}
-														portrait_body= {
+														portrait_body_large= {
 														}
 														background = {
 															using = Background_Area
 															margin_bottom = 20
-														}
-													}
-													flowcontainer = {
-														name = "stat flow"
-														min_width = 221
-														min_height = 320
-														layoutpolicy_vertical = expanding
-														layoutpolicy_horizontal = expanding
-														scrollarea = {
-															layoutpolicy_horizontal = expanding
-															layoutpolicy_vertical = expanding
-															scrollwidget = {
-																flowcontainer = {
-																	direction = vertical
-																	resizeparent = yes
-																	text_single = {
-																		text = "hi"
-																		align = left
-																		autoresize = yes
-																	}
-																	text_single = {
-																		text = "[Character.GetFullNameNoTooltip]"
-																		align = center
-																		autoresize = yes
-																	}
-																	text_single = {
-																		text = "[Character.GetFullNameNoTooltip]"
-																		align = center
-																		autoresize = yes
-																	}
-																	text_single = {
-																		text = "[Character.GetFullNameNicknamed]"
-																		align = center
-																		autoresize = yes
-																	}
-																}
-															}
-															scrollbarpolicy_horizontal = always_on
-															scrollbar_vertical = {
-																using = editor_vertical_scrollbar
-															}
-														}
-														background = {
-															using = Background_Area
-															margin_top = 10
-															margin_bottom = 10
 														}
 													}
 												}
@@ -423,7 +198,7 @@
 						name = "Second Row"
 						direction = vertical
 						min_width = 1250
-						min_height = 400
+						min_height = 600
 						flowcontainer = {
 							name = "header"
 							direction = horizontal
@@ -434,7 +209,7 @@
 							}
 						}
 						scrollarea = {
-							minimumsize = {1250 380
+							minimumsize = {1250 600
 							}
 							background = {
 								using = Background_Bottom_Fade
@@ -450,7 +225,6 @@
 										item = {
 											flowcontainer = {
 												name = "big flow"
-												min_width = 420
 												min_height = 335
 												allow_outside = no
 												margin = { 8 10
@@ -477,57 +251,11 @@
 															margin_bottom = 20
 														}
 													}
-													portrait_body= {
+													portrait_body_large= {
 													}
 													background = {
 														using = Background_Area
 														margin_bottom = 20
-													}
-												}
-												flowcontainer = {
-													name = "stat flow"
-													min_width = 221
-													min_height = 320
-													layoutpolicy_vertical = expanding
-													layoutpolicy_horizontal = expanding
-													scrollarea = {
-														layoutpolicy_horizontal = expanding
-														layoutpolicy_vertical = expanding
-														scrollwidget = {
-															flowcontainer = {
-																direction = vertical
-																resizeparent = yes
-																text_single = {
-																	text = "hi"
-																	align = left
-																	autoresize = yes
-																}
-																text_single = {
-																	text = "[Character.GetFullNameNoTooltip]"
-																	align = center
-																	autoresize = yes
-																}
-																text_single = {
-																	text = "[Character.GetFullNameNoTooltip]"
-																	align = center
-																	autoresize = yes
-																}
-																text_single = {
-																	text = "[Character.GetFullNameNicknamed]"
-																	align = center
-																	autoresize = yes
-																}
-															}
-														}
-														scrollbarpolicy_horizontal = always_on
-														scrollbar_vertical = {
-															using = editor_vertical_scrollbar
-														}
-													}
-													background = {
-														using = Background_Area
-														margin_top = 10
-														margin_bottom = 10
 													}
 												}
 											}
@@ -547,7 +275,7 @@
 						name = "Third Row"
 						direction = vertical
 						min_width = 1250
-						min_height = 400
+						min_height = 600
 						flowcontainer = {
 							name = "header"
 							direction = horizontal
@@ -558,7 +286,7 @@
 							}
 						}
 						scrollarea = {
-							minimumsize = {1250 380
+							minimumsize = {1250 600
 							}
 							background = {
 								using = Background_Bottom_Fade
@@ -574,10 +302,9 @@
 										item = {
 											flowcontainer = {
 												name = "big flow"
-												min_width = 420
 												min_height = 335
 												allow_outside = no
-												margin = { 8 10
+												margin = { 0 10
 												}
 												direction = horizontal
 												datacontext = "[Scope.GetCharacter]"
@@ -601,57 +328,11 @@
 															margin_bottom = 20
 														}
 													}
-													portrait_body= {
+													portrait_body_large= {
 													}
 													background = {
 														using = Background_Area
 														margin_bottom = 20
-													}
-												}
-												flowcontainer = {
-													name = "stat flow"
-													min_width = 221
-													min_height = 320
-													layoutpolicy_vertical = expanding
-													layoutpolicy_horizontal = expanding
-													scrollarea = {
-														layoutpolicy_horizontal = expanding
-														layoutpolicy_vertical = expanding
-														scrollwidget = {
-															flowcontainer = {
-																direction = vertical
-																resizeparent = yes
-																text_single = {
-																	text = "hi"
-																	align = left
-																	autoresize = yes
-																}
-																text_single = {
-																	text = "[Character.GetFullNameNoTooltip]"
-																	align = center
-																	autoresize = yes
-																}
-																text_single = {
-																	text = "[Character.GetFullNameNoTooltip]"
-																	align = center
-																	autoresize = yes
-																}
-																text_single = {
-																	text = "[Character.GetFullNameNicknamed]"
-																	align = center
-																	autoresize = yes
-																}
-															}
-														}
-														scrollbarpolicy_horizontal = always_on
-														scrollbar_vertical = {
-															using = editor_vertical_scrollbar
-														}
-													}
-													background = {
-														using = Background_Area
-														margin_top = 10
-														margin_bottom = 10
 													}
 												}
 											}
