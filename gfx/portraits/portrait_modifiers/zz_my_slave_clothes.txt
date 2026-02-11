@@ -1,7 +1,7 @@
 ﻿
 decorative_slave_haircut  = {
 	usage = game
-	priority = 100
+	priority = 50000
 	decorative_slave_haircut = {
 		dna_modifiers = {
 			accessory = {
@@ -10,12 +10,161 @@ decorative_slave_haircut  = {
 				template = no_hairstyles
 				value = 1.0
 			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				value = 1.0
+			}
+			accessory = {
+				mode = add
+				gene = clothes
+				template = western_low_nobility_clothes
+				range = { 0 1
+				} # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1
+				}
+			}
+			accessory = {
+				mode = add
+				gene = tops
+				template = sheer_bra
+				range = { 0 1
+				}
+			}
+			accessory = {
+				mode = add
+				gene = bottoms
+				template = sheer_g_string
+				range = { 0 1
+				}
+			}
 		}
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
 				has_character_flag = decorative_slave_haircut
+				wearing_revealing_clothes_trigger = yes
+			}
+		}
+	}
+}
+concubine_slave_haircut  = {
+	usage = game
+	priority = 50000
+	concubine_slave_haircut = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = fp1_hairstyles_straight
+				range = { 0 1
+				} # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				value = 1.0
+			}
+			accessory = {
+				mode = add
+				gene = clothes
+				template = western_high_nobility_clothes
+				range = { 0 1
+				} # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1
+				}
+			}
+			accessory = {
+				mode = add
+				gene = tops
+				template = sheer_bra
+				range = { 0 1
+				}
+			}
+			accessory = {
+				mode = add
+				gene = bottoms
+				template = sheer_g_string
+				range = { 0 1
+				}
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_character_flag = concubine_slave_haircut
+				wearing_revealing_clothes_trigger = yes
+			}
+		}
+	}
+}
+secondary_slave_haircut  = {
+	usage = game
+	priority = 50000
+	secondary_slave_haircut = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = northern_hairstyles_straight
+				range = { 0 1
+				} # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = ep2_western_era1_high_nobility
+				value = 1.0
+			}
+			accessory = {
+				mode = add
+				gene = clothes
+				template = byzantine_high_nobility_clothes
+				range = { 0 1
+				} # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1
+				}
+			}
+			accessory = {
+				mode = add
+				gene = tops
+				template = sheer_bra
+				range = { 0 1
+				}
+			}
+			accessory = {
+				mode = add
+				gene = bottoms
+				template = sheer_g_string
+				range = { 0 1
+				}
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_character_flag = secondary_slave_haircut
+				wearing_revealing_clothes_trigger = yes
 			}
 		}
 	}
