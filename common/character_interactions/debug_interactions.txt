@@ -1,0 +1,95 @@
+﻿# common/character_interactions/debug_interactions.txt
+# Sets exactly ONE tier flag on the recipient by removing the other tier flags first.
+# (Uses your existing flag names: decorative_slave_flag | concubine_slave_flag | secondary_slave_flag | great_slave_flag)
+debug_set_tier_decorative_slave_flag = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_set_tier_decorative_slave_flag_desc
+	on_accept = {
+		scope:recipient = {
+			remove_character_flag = concubine_slave_flag
+			remove_character_flag = secondary_slave_flag
+			remove_character_flag = great_slave_flag
+			add_character_flag = { flag = decorative_slave_flag
+			}
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+debug_set_tier_concubine_slave_flag = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_set_tier_concubine_slave_flag_desc
+	on_accept = {
+		scope:recipient = {
+			remove_character_flag = decorative_slave_flag
+			remove_character_flag = secondary_slave_flag
+			remove_character_flag = great_slave_flag
+			add_character_flag = { flag = concubine_slave_flag
+			}
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+debug_set_tier_secondary_slave_flag = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_set_tier_secondary_slave_flag_desc
+	on_accept = {
+		scope:recipient = {
+			remove_character_flag = decorative_slave_flag
+			remove_character_flag = concubine_slave_flag
+			remove_character_flag = great_slave_flag
+			add_character_flag = { flag = secondary_slave_flag
+			}
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+debug_set_tier_great_slave_flag = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_set_tier_great_slave_flag_desc
+	on_accept = {
+		scope:recipient = {
+			remove_character_flag = decorative_slave_flag
+			remove_character_flag = concubine_slave_flag
+			remove_character_flag = secondary_slave_flag
+			add_character_flag = { flag = great_slave_flag
+			}
+		}
+	}
+	ai_potential = { always = no
+	}
+}

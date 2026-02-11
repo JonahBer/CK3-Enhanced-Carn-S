@@ -1,23 +1,77 @@
-﻿toggle_slave_management_window = {
+﻿# decorative_slaves -> decorative_slaves | concubine_slaves | secondary_slaves | great_slaves
+toggle_slave_management_window = {
 	effect = {
 		if = {
 			limit = { has_variable = show_slave_management_window
 			}
 			remove_variable = show_slave_management_window
 			root = {
-				clear_variable_list = secret_society
+				clear_variable_list = decorative_slaves
+				clear_variable_list = concubine_slaves
+				clear_variable_list = secondary_slaves
+				clear_variable_list = great_slaves
 			}
 		}
 		else = {
 			set_variable = show_slave_management_window
-			every_living_character = {
+			every_courtier_or_guest = {
 				limit = {
 					root = { has_relation_slave = prev
 					}
+					has_character_flag = decorative_slave_flag
+				}
+				remove_character_flag = concubine_slave_haircut
+				remove_character_flag = secondary_slave_haircut
+				add_character_flag = wearing_revealing_clothes_2
+				add_character_flag = decorative_slave_haircut
+				root = {
+					add_to_variable_list = {
+						name = decorative_slaves
+						target = prev
+					}
+				}
+			}
+			every_courtier_or_guest = {
+				limit = {
+					root = { has_relation_slave = prev
+					}
+					has_character_flag = concubine_slave_flag
+				}
+				remove_character_flag = decorative_slave_haircut
+				remove_character_flag = secondary_slave_haircut
+				add_character_flag = wearing_revealing_clothes_2
+				add_character_flag = concubine_slave_haircut
+				root = {
+					add_to_variable_list = {
+						name = concubine_slaves
+						target = prev
+					}
+				}
+			}
+			every_courtier_or_guest = {
+				limit = {
+					root = { has_relation_slave = prev
+					}
+					has_character_flag = secondary_slave_flag
+				}
+				remove_character_flag = concubine_slave_haircut
+				remove_character_flag = decorative_slave_haircut
+				add_character_flag = wearing_revealing_clothes_2
+				add_character_flag = secondary_slave_haircut
+				root = {
+					add_to_variable_list = {
+						name = secondary_slaves
+						target = prev
+					}
+				}
+			}
+			every_courtier_or_guest = {
+				limit = {
+					has_character_flag = great_slave_flag
 				}
 				root = {
 					add_to_variable_list = {
-						name = secret_society
+						name = great_slaves
 						target = prev
 					}
 				}
