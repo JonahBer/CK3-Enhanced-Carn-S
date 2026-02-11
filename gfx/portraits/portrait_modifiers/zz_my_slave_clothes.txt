@@ -1,0 +1,22 @@
+﻿
+decorative_slave_haircut  = {
+	usage = game
+	priority = 100
+	decorative_slave_haircut = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				value = 1.0
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_character_flag = decorative_slave_haircut
+			}
+		}
+	}
+}

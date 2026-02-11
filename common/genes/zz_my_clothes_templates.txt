@@ -1,0 +1,21 @@
+﻿# Point at female clothes keys here (templates)
+clothes = {
+	decorative_slave_template = {
+		index = 90
+		female = { 1 = female_clothes_secular_western_nobility_01_common
+		}
+		male   = { 1 = male_clothes_secular_western_nobility_01_common
+		}
+		boy = male
+		girl = female
+	}
+	concubine_slave_template = {
+		index = 91
+		female = { 1 = female_clothes_secular_western_nobility_01_low
+		}
+		male   = { 1 = male_clothes_secular_western_nobility_01_low
+		}
+		boy = male
+		girl = female
+	}
+}

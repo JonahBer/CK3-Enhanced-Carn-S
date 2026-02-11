@@ -20,6 +20,7 @@ toggle_slave_management_window = {
 					}
 					has_character_flag = decorative_slave_flag
 				}
+				add_character_flag = decorative_slave_haircut
 				root = {
 					add_to_variable_list = {
 						name = decorative_slaves
