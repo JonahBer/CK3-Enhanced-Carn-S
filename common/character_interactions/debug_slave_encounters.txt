@@ -1,0 +1,146 @@
+﻿# Debug interactions to force-fire slave encounter events
+# Right-click yourself in debug mode to use these
+# Fires the full random system (weighted pick + random location)
+debug_force_slave_encounter_random = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_force_slave_encounter_random_desc
+	on_accept = {
+		scope:actor = {
+			remove_character_flag = slave_encounter_cooldown
+			trigger_event = {
+				on_action = slave_random_encounter_pulse
+			}
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+# Individual event forcers
+debug_force_slave_encounter_garden = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_force_slave_encounter_garden_desc
+	on_accept = {
+		scope:actor = {
+			remove_character_flag = slave_encounter_cooldown
+			trigger_event = slave_encounter.1001
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+debug_force_slave_encounter_bedroom = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_force_slave_encounter_bedroom_desc
+	on_accept = {
+		scope:actor = {
+			remove_character_flag = slave_encounter_cooldown
+			trigger_event = slave_encounter.1002
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+debug_force_slave_encounter_kitchen = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_force_slave_encounter_kitchen_desc
+	on_accept = {
+		scope:actor = {
+			remove_character_flag = slave_encounter_cooldown
+			trigger_event = slave_encounter.1003
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+debug_force_slave_encounter_courtyard = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_force_slave_encounter_courtyard_desc
+	on_accept = {
+		scope:actor = {
+			remove_character_flag = slave_encounter_cooldown
+			trigger_event = slave_encounter.1004
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+debug_force_slave_encounter_library = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_force_slave_encounter_library_desc
+	on_accept = {
+		scope:actor = {
+			remove_character_flag = slave_encounter_cooldown
+			trigger_event = slave_encounter.1005
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+debug_force_slave_encounter_bathhouse = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_force_slave_encounter_bathhouse_desc
+	on_accept = {
+		scope:actor = {
+			remove_character_flag = slave_encounter_cooldown
+			trigger_event = slave_encounter.1006
+		}
+	}
+	ai_potential = { always = no
+	}
+}

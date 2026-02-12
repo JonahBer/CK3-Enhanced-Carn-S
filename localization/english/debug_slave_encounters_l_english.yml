@@ -1,0 +1,22 @@
+﻿l_english:
+
+ debug_force_slave_encounter_random:0 "DEBUG: Force Random Slave Encounter"
+ debug_force_slave_encounter_random_desc:0 "Clears cooldown and fires the full random encounter system (weighted slave pick + random location)."
+
+ debug_force_slave_encounter_garden:0 "DEBUG: Slave Encounter - Garden"
+ debug_force_slave_encounter_garden_desc:0 "Forces the garden encounter event."
+
+ debug_force_slave_encounter_bedroom:0 "DEBUG: Slave Encounter - Bedroom"
+ debug_force_slave_encounter_bedroom_desc:0 "Forces the bedroom encounter event."
+
+ debug_force_slave_encounter_kitchen:0 "DEBUG: Slave Encounter - Kitchen"
+ debug_force_slave_encounter_kitchen_desc:0 "Forces the kitchen encounter event."
+
+ debug_force_slave_encounter_courtyard:0 "DEBUG: Slave Encounter - Courtyard"
+ debug_force_slave_encounter_courtyard_desc:0 "Forces the courtyard encounter event."
+
+ debug_force_slave_encounter_library:0 "DEBUG: Slave Encounter - Library"
+ debug_force_slave_encounter_library_desc:0 "Forces the library encounter event."
+
+ debug_force_slave_encounter_bathhouse:0 "DEBUG: Slave Encounter - Bathhouse"
+ debug_force_slave_encounter_bathhouse_desc:0 "Forces the bathhouse encounter event."

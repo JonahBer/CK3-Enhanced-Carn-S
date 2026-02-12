@@ -1,0 +1,503 @@
+﻿namespace = slave_encounter
+####################################
+# 1001 - Garden Encounter
+####################################
+slave_encounter.1001 = {
+	type = character_event
+	title = slave_encounter.1001.t
+	desc = slave_encounter.1001.desc
+	theme = seduction
+	left_portrait = {
+		character = root
+		animation = personality_calm
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = idle
+	}
+	trigger = {
+		NOT = { has_character_flag = slave_encounter_cooldown
+		}
+		any_courtier_or_guest = {
+			root = { has_relation_slave = prev
+			}
+			is_alive = yes
+		}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+		random_courtier_or_guest = {
+			limit = {
+				root = { has_relation_slave = prev
+				}
+				is_alive = yes
+			}
+			weight = {
+				base = 10
+				modifier = {
+					add = 15
+					has_character_flag = concubine_slave_flag
+				}
+				modifier = {
+					add = 40
+					has_character_flag = secondary_slave_flag
+				}
+				modifier = {
+					add = 90
+					has_character_flag = great_slave_flag
+				}
+			}
+			save_scope_as = encounter_slave
+		}
+	}
+	option = {
+		name = slave_encounter.1001.a
+		add_prestige = 5
+		stress_impact = {
+			base = -5
+		}
+	}
+	option = {
+		name = slave_encounter.1001.b
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 10
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1001.c
+		add_dread = 2
+	}
+}
+####################################
+# 1002 - Bedroom / Chambers Encounter
+####################################
+slave_encounter.1002 = {
+	type = character_event
+	title = slave_encounter.1002.t
+	desc = slave_encounter.1002.desc
+	theme = seduction
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = shame
+	}
+	trigger = {
+		NOT = { has_character_flag = slave_encounter_cooldown
+		}
+		any_courtier_or_guest = {
+			root = { has_relation_slave = prev
+			}
+			is_alive = yes
+		}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+		random_courtier_or_guest = {
+			limit = {
+				root = { has_relation_slave = prev
+				}
+				is_alive = yes
+			}
+			weight = {
+				base = 10
+				modifier = {
+					add = 15
+					has_character_flag = concubine_slave_flag
+				}
+				modifier = {
+					add = 40
+					has_character_flag = secondary_slave_flag
+				}
+				modifier = {
+					add = 90
+					has_character_flag = great_slave_flag
+				}
+			}
+			save_scope_as = encounter_slave
+		}
+	}
+	option = {
+		name = slave_encounter.1002.a
+		stress_impact = {
+			base = -5
+		}
+	}
+	option = {
+		name = slave_encounter.1002.b
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1002.c
+		add_dread = 3
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -10
+			}
+		}
+	}
+}
+####################################
+# 1003 - Kitchen / Pantry Encounter
+####################################
+slave_encounter.1003 = {
+	type = character_event
+	title = slave_encounter.1003.t
+	desc = slave_encounter.1003.desc
+	theme = friendly
+	left_portrait = {
+		character = root
+		animation = personality_content
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = worry
+	}
+	trigger = {
+		NOT = { has_character_flag = slave_encounter_cooldown
+		}
+		any_courtier_or_guest = {
+			root = { has_relation_slave = prev
+			}
+			is_alive = yes
+		}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+		random_courtier_or_guest = {
+			limit = {
+				root = { has_relation_slave = prev
+				}
+				is_alive = yes
+			}
+			weight = {
+				base = 10
+				modifier = {
+					add = 15
+					has_character_flag = concubine_slave_flag
+				}
+				modifier = {
+					add = 40
+					has_character_flag = secondary_slave_flag
+				}
+				modifier = {
+					add = 90
+					has_character_flag = great_slave_flag
+				}
+			}
+			save_scope_as = encounter_slave
+		}
+	}
+	option = {
+		name = slave_encounter.1003.a
+		stress_impact = {
+			base = -10
+		}
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 10
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1003.b
+		add_dread = 2
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -5
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1003.c
+	}
+}
+####################################
+# 1004 - Courtyard / Training Yard Encounter
+####################################
+slave_encounter.1004 = {
+	type = character_event
+	title = slave_encounter.1004.t
+	desc = slave_encounter.1004.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = stress
+	}
+	trigger = {
+		NOT = { has_character_flag = slave_encounter_cooldown
+		}
+		any_courtier_or_guest = {
+			root = { has_relation_slave = prev
+			}
+			is_alive = yes
+		}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+		random_courtier_or_guest = {
+			limit = {
+				root = { has_relation_slave = prev
+				}
+				is_alive = yes
+			}
+			weight = {
+				base = 10
+				modifier = {
+					add = 15
+					has_character_flag = concubine_slave_flag
+				}
+				modifier = {
+					add = 40
+					has_character_flag = secondary_slave_flag
+				}
+				modifier = {
+					add = 90
+					has_character_flag = great_slave_flag
+				}
+			}
+			save_scope_as = encounter_slave
+		}
+	}
+	option = {
+		name = slave_encounter.1004.a
+		add_prestige = 5
+	}
+	option = {
+		name = slave_encounter.1004.b
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		stress_impact = {
+			base = -5
+		}
+	}
+	option = {
+		name = slave_encounter.1004.c
+		add_dread = 5
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -10
+			}
+		}
+	}
+}
+####################################
+# 1005 - Library / Study Encounter
+####################################
+slave_encounter.1005 = {
+	type = character_event
+	title = slave_encounter.1005.t
+	desc = slave_encounter.1005.desc
+	theme = education
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = idle
+	}
+	trigger = {
+		NOT = { has_character_flag = slave_encounter_cooldown
+		}
+		any_courtier_or_guest = {
+			root = { has_relation_slave = prev
+			}
+			is_alive = yes
+		}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+		random_courtier_or_guest = {
+			limit = {
+				root = { has_relation_slave = prev
+				}
+				is_alive = yes
+			}
+			weight = {
+				base = 10
+				modifier = {
+					add = 15
+					has_character_flag = concubine_slave_flag
+				}
+				modifier = {
+					add = 40
+					has_character_flag = secondary_slave_flag
+				}
+				modifier = {
+					add = 90
+					has_character_flag = great_slave_flag
+				}
+			}
+			save_scope_as = encounter_slave
+		}
+	}
+	option = {
+		name = slave_encounter.1005.a
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		stress_impact = {
+			base = -10
+		}
+	}
+	option = {
+		name = slave_encounter.1005.b
+		add_prestige = 10
+	}
+	option = {
+		name = slave_encounter.1005.c
+		add_dread = 3
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -15
+			}
+		}
+	}
+}
+####################################
+# 1006 - Bathhouse Encounter
+####################################
+slave_encounter.1006 = {
+	type = character_event
+	title = slave_encounter.1006.t
+	desc = slave_encounter.1006.desc
+	theme = seduction
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = shame
+	}
+	trigger = {
+		NOT = { has_character_flag = slave_encounter_cooldown
+		}
+		any_courtier_or_guest = {
+			root = { has_relation_slave = prev
+			}
+			is_alive = yes
+		}
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+		random_courtier_or_guest = {
+			limit = {
+				root = { has_relation_slave = prev
+				}
+				is_alive = yes
+			}
+			weight = {
+				base = 10
+				modifier = {
+					add = 15
+					has_character_flag = concubine_slave_flag
+				}
+				modifier = {
+					add = 40
+					has_character_flag = secondary_slave_flag
+				}
+				modifier = {
+					add = 90
+					has_character_flag = great_slave_flag
+				}
+			}
+			save_scope_as = encounter_slave
+		}
+	}
+	option = {
+		name = slave_encounter.1006.a
+		stress_impact = {
+			base = -15
+		}
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 10
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1006.b
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 5
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1006.c
+		stress_impact = {
+			base = -5
+		}
+	}
+}

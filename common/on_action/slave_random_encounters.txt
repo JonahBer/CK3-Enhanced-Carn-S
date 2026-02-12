@@ -1,0 +1,60 @@
+﻿# Append our on_action to the vanilla quarterly pulse
+# Safe modding pattern: doesn't override the vanilla file
+quarterly_playable_pulse = {
+	on_actions = {
+		slave_random_encounter_pulse
+	}
+}
+# Gate: player only, must own slaves, not on cooldown
+slave_random_encounter_pulse = {
+	trigger = {
+		is_ai = no
+		NOT = { has_character_flag = slave_encounter_cooldown
+		}
+		any_courtier_or_guest = {
+			root = { has_relation_slave = prev
+			}
+			is_alive = yes
+		}
+	}
+	random_on_action = {
+		chance_to_happen = 50
+		100 = slave_encounter_garden
+		100 = slave_encounter_bedroom
+		100 = slave_encounter_kitchen
+		100 = slave_encounter_courtyard
+		100 = slave_encounter_library
+		100 = slave_encounter_bathhouse
+	}
+}
+# Each location is its own on_action that fires a single event
+slave_encounter_garden = {
+	events = {
+		slave_encounter.1001
+	}
+}
+slave_encounter_bedroom = {
+	events = {
+		slave_encounter.1002
+	}
+}
+slave_encounter_kitchen = {
+	events = {
+		slave_encounter.1003
+	}
+}
+slave_encounter_courtyard = {
+	events = {
+		slave_encounter.1004
+	}
+}
+slave_encounter_library = {
+	events = {
+		slave_encounter.1005
+	}
+}
+slave_encounter_bathhouse = {
+	events = {
+		slave_encounter.1006
+	}
+}
