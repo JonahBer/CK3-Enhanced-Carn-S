@@ -1,0 +1,43 @@
+﻿l_english:
+
+ ## Garden Encounter ##
+ slave_encounter.1001.t:0 "A Moment in the Garden"
+ slave_encounter.1001.desc:0 "The air is thick with the scent of blooming flowers as you stroll through the garden. Rounding a hedge, you come upon [encounter_slave.GetFirstName], kneeling among the flowerbeds. [encounter_slave.GetSheHe|U] hasn't noticed you yet — [encounter_slave.GetSheHe] seems lost in thought, fingers tracing the petals of a rose."
+ slave_encounter.1001.a:0 "I watch quietly for a moment."
+ slave_encounter.1001.b:0 "I approach and speak with [encounter_slave.GetHerHim]."
+ slave_encounter.1001.c:0 "Back to work. Now."
+
+ ## Bedroom / Chambers Encounter ##
+ slave_encounter.1002.t:0 "An Unexpected Presence"
+ slave_encounter.1002.desc:0 "You retire to your chambers earlier than usual, only to find [encounter_slave.GetFirstName] inside, tidying the linens. [encounter_slave.GetSheHe|U] freezes at the sight of you, cheeks flushing, clutching a folded sheet to [encounter_slave.GetHerHis] chest."
+ slave_encounter.1002.a:0 "Carry on. I don't mind."
+ slave_encounter.1002.b:0 "There's no rush. Stay a while."
+ slave_encounter.1002.c:0 "Get out. I didn't summon you."
+
+ ## Kitchen / Pantry Encounter ##
+ slave_encounter.1003.t:0 "The Smell of Something Good"
+ slave_encounter.1003.desc:0 "A rich, warm aroma draws you toward the kitchens. There you find [encounter_slave.GetFirstName] hunched over a pot, stirring something that smells far better than the usual fare. [encounter_slave.GetSheHe|U] startles when [encounter_slave.GetSheHe] sees you standing in the doorway."
+ slave_encounter.1003.a:0 "Let me taste that."
+ slave_encounter.1003.b:0 "Shouldn't you be elsewhere?"
+ slave_encounter.1003.c:0 "I say nothing and leave."
+
+ ## Courtyard / Training Yard Encounter ##
+ slave_encounter.1004.t:0 "Sweat and Steel"
+ slave_encounter.1004.desc:0 "Crossing the courtyard, you spot [encounter_slave.GetFirstName] near the training yard. [encounter_slave.GetSheHe|U] is watching the soldiers drill with an intensity that surprises you — fists clenched, jaw tight, as if imagining [encounter_slave.GetHerHim]self among them."
+ slave_encounter.1004.a:0 "Interesting. I observe from a distance."
+ slave_encounter.1004.b:0 "You have spirit. Don't lose it."
+ slave_encounter.1004.c:0 "Know your place. You are not one of them."
+
+ ## Library / Study Encounter ##
+ slave_encounter.1005.t:0 "Among the Pages"
+ slave_encounter.1005.desc:0 "You enter the study seeking a particular tome, only to find [encounter_slave.GetFirstName] already there. [encounter_slave.GetSheHe|U] sits cross-legged on the floor with a heavy book open across [encounter_slave.GetHerHis] lap, lips moving silently as [encounter_slave.GetSheHe] reads."
+ slave_encounter.1005.a:0 "I sit beside [encounter_slave.GetHerHim] and read."
+ slave_encounter.1005.b:0 "Tell me — what have you learned?"
+ slave_encounter.1005.c:0 "These books are not for you."
+
+ ## Bathhouse Encounter ##
+ slave_encounter.1006.t:0 "Steam and Silence"
+ slave_encounter.1006.desc:0 "You enter the bathhouse expecting solitude, but the steam parts to reveal [encounter_slave.GetFirstName] already within. Water glistens on [encounter_slave.GetHerHis] skin as [encounter_slave.GetSheHe] turns, startled, making no move to cover [encounter_slave.GetHerHim]self."
+ slave_encounter.1006.a:0 "I step in and join [encounter_slave.GetHerHim]."
+ slave_encounter.1006.b:0 "You look well. Enjoy your bath."
+ slave_encounter.1006.c:0 "I avert my eyes and leave."
