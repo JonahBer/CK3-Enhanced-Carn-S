@@ -500,4 +500,10 @@ slave_encounter.1006 = {
 			base = -5
 		}
 	}
+	option = {
+		name = slave_encounter.1006.d
+		stress_impact = {
+			base = 0
+		}
+	}
 }

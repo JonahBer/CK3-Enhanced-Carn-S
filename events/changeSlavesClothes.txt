@@ -3,7 +3,7 @@ changeSlavesClothes.1 = {
 	type = character_event
 	title = changeSlavesClothes.1.t
 	desc  = changeSlavesClothes.1.desc
-	lower_left_portrait = root
+	window = sex_event_window
 	immediate = {
 		set_variable = { name = tmp_count value = 0
 		}
@@ -13,6 +13,7 @@ changeSlavesClothes.1 = {
 			limit = {
 				root = { has_relation_slave = prev
 				}   # same working direction as your toggle
+				has_character_flag = secondary_slave_haircut
 			}
 			# If prev.tmp_count == 0/1, save this slave as scope
 			if = {
@@ -35,13 +36,6 @@ changeSlavesClothes.1 = {
 					}
 				}
 			}
-			# Add this slave to the owner's list (same pattern as your toggle)
-			root = {
-				add_to_variable_list = {
-					name = decorative_slaves
-					target = prev
-				}
-			}
 			# Increment counter on prev (the event owner), not on the iterated slave
 			prev = { change_variable = { name = tmp_count add = 1
 				}
@@ -59,14 +53,14 @@ changeSlavesClothes.1 = {
 		trigger = { exists = scope:slave_1
 		}
 		character = scope:slave_1
-		animation = shame
+		animation = sex_combined
 	}
 	left_portrait = {
-		trigger = { exists = scope:slave_2
-		}
-		character = scope:slave_2
-		animation = shame
+		character = root
+		animation = sex_combined
 	}
+	carn_sex_scene_start = yes
+	sex_animations = yes
 	option = { name = naked.1.a
 	}
 	option = { name = cloth.1.b
