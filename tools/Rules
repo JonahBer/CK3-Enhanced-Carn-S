@@ -1,0 +1,99 @@
+﻿Carnalities Enhanced Slaves - Slavery System.
+
+Tier System
+    - There are four teirs to this traditional system.
+    - Great Slave (1), Secondary Slave (3), Concubine Slaves (10), Decorative Slaves (30)
+    - System can be customized with power.
+    - Tiers have required outfits to be worn.
+
+Promotion of Tiers
+    - A slave can be promoted to next tier when the following conditions are met:
+        ~ There is room in next tier.
+        ~ She is the oldest waiting to be promoted.
+        ~ She has reached the 1000 additional status required for tier. 
+            [great: 4000+, secondary: 3000+, concubine: 2000+]
+    - OR
+        ~ Master promotes manually
+            ~ Slave will then automatically assume minimum status required for that tier.
+New Slaves
+    - When a new female slave is owned by master, she is given 1000 status right away.
+
+Birth Rights
+    - If the female slave gives birth to the masters child
+        ~ The child is not able to be considered masters child
+        ~ The child is not free
+        ~ If the gender is female then she is now a child slave until 13 when she then turns decorative.
+        ~ If the gender is male then he is not a tier, but still is a slave.
+
+Improving Slaves Status
+    - Status of a slave will be gained passively due to traits (each month)
+    - The following traits will help a slave gain status
+        ~ Lustful
+        ~ Calm 
+        ~ Content
+        ~ Diligent
+        ~ Forgiving
+        ~ Generous
+        ~ Shy
+        ~ Humble
+        ~ Just 
+        ~ Temperate
+        ~ Patient
+        ~ Trusting
+        ~ Compassionate
+        
+        ~ High Diplomacy
+        ~ High Intrigue
+        ~ High Learning
+
+        ~ Pure-blooded
+        ~ Fecund
+        
+        ~ Appearance (Beautiful, Pretty, Comely)
+        ~ Intelligence (Genius, Intelligent, Quick)
+
+        ~ Shrewd
+        
+        ~ Poet
+        ~ Physician
+        ~ Mystic
+
+        ~ Gardener
+        ~ Diplomat
+        ~ Patriarch
+        ~ Strategist
+        ~ Administrator
+        ~ Schemer
+        ~ Seducer / Seductress
+        ~ Herbalist
+        ~ Whole of Body
+        ~ Deviant
+        ~ Confider
+        ~ Athletic
+        ~ Journaller
+
+        ~ Charming
+        ~ Pensive
+    - The following traits will hurt this slave status
+        ~ Appearance (Hideous, Ugly, Homely)
+        ~ One Eyed
+        ~ One Legged
+        ~ Scarred
+        ~ Cannibal
+        ~ Bossy
+
+        ~ Sickly
+        ~ Impotent
+        ~ Maimed
+        ~ Infirm
+        ~ Inbred
+        ~ Blind
+        ~ Disfigured
+
+        ~ Wounded
+        ~ Severely Injured	
+        ~ Brutally Mauled	
+        ~ Incapable
+
+
+
