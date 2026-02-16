@@ -120,6 +120,18 @@ toggle_slave_management_window = {
 					}
 				}
 			}
+			# Start monthly status loop
+			if = {
+				limit = {
+					NOT = { has_character_flag = status_loop_running
+					}
+				}
+				add_character_flag = status_loop_running
+				trigger_event = {
+					id = status_monthly.0001
+					days = 1
+				}
+			}
 		}
 	}
 }
