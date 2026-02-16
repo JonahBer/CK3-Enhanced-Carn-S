@@ -1,0 +1,5 @@
+﻿on_yearly_playable = {
+	events = {
+		status_monthly.0001
+	}
+}

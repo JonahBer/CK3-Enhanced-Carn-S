@@ -1,0 +1,26 @@
+﻿status_compute_and_store_incremental_value_effect = {
+	set_variable = {
+		name = status_incremental_value
+		value = incremental_status_value
+	}
+}
+status_apply_increment_to_status_tier_effect = {
+	# assumes you already set var:status_incremental_value this month
+	if = {
+		limit = { NOT = { var:status_incremental_value = 0
+			}
+		}
+		# ensure status_tier exists (optional safety)
+		if = {
+			limit = { NOT = { exists = var:status_tier
+				}
+			}
+			set_variable = { name = status_tier value = 0
+			}
+		}
+		change_variable = {
+			name = status_tier
+			add = var:status_incremental_value
+		}
+	}
+}
