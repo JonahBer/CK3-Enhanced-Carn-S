@@ -1,0 +1,165 @@
+﻿incremental_status_value = {
+	value = 0
+	if = { limit = { has_trait = lustful
+		} add = 1
+	}
+	if = { limit = { has_trait = calm
+		} add = 1
+	}
+	if = { limit = { has_trait = content
+		} add = 1
+	}
+	if = { limit = { has_trait = diligent
+		} add = 1
+	}
+	if = { limit = { has_trait = forgiving
+		} add = 1
+	}
+	if = { limit = { has_trait = generous
+		} add = 1
+	}
+	if = { limit = { has_trait = shy
+		} add = 1
+	}
+	if = { limit = { has_trait = humble
+		} add = 1
+	}
+	if = { limit = { has_trait = just
+		} add = 1
+	}
+	if = { limit = { has_trait = temperate
+		} add = 1
+	}
+	if = { limit = { has_trait = patient
+		} add = 1
+	}
+	if = { limit = { has_trait = trusting
+		} add = 1
+	}
+	if = { limit = { has_trait = compassionate
+		} add = 1
+	}
+	if = { limit = { has_trait = pure_blooded
+		} add = 2
+	}
+	if = { limit = { has_trait = fecund
+		} add = 2
+	}
+	if = { limit = { has_trait = beauty_good
+		} add = 1
+	}
+	if = { limit = { has_trait = beauty_good_1
+		} add = 1
+	}
+	if = { limit = { has_trait = intellect_good_3
+		} add = 2
+	}
+	if = { limit = { has_trait = intellect_good_2
+		} add = 1
+	}
+	if = { limit = { has_trait = shrewd
+		} add = 1
+	}
+	if = { limit = { has_trait = lifestyle_poet
+		} add = 1
+	}
+	if = { limit = { has_trait = lifestyle_physician
+		} add = 1
+	}
+	if = { limit = { has_trait = lifestyle_mystic
+		} add = 1
+	}
+	if = { limit = { has_trait = lifestyle_gardener
+		} add = 1
+	}
+	if = { limit = { has_trait = diplomat
+		} add = 1
+	}
+	if = { limit = { has_trait = strategist
+		} add = 1
+	}
+	if = { limit = { has_trait = administrator
+		} add = 1
+	}
+	if = { limit = { has_trait = schemer
+		} add = 1
+	}
+	if = { limit = { has_trait = seducer
+		} add = 1
+	}
+	if = { limit = { has_trait = lifestyle_herbalist
+		} add = 1
+	}
+	if = { limit = { has_trait = whole_of_body
+		} add = 1
+	}
+	if = { limit = { has_trait = deviant
+		} add = -1
+	}
+	if = { limit = { has_trait = confider
+		} add = 1
+	}
+	if = { limit = { has_trait = athletic
+		} add = 1
+	}
+	if = { limit = { has_trait = journaller
+		} add = 1
+	}
+	if = { limit = { has_trait = charming
+		} add = 1
+	}
+	if = { limit = { has_trait = pensive
+		} add = 1
+	}
+	if = { limit = { has_trait = beauty_bad
+		} add = -1
+	}
+	if = { limit = { has_trait = beauty_bad_1
+		} add = -1
+	}
+	if = { limit = { has_trait = one_eyed
+		} add = -1
+	}
+	if = { limit = { has_trait = one_legged
+		} add = -2
+	}
+	if = { limit = { has_trait = scarred
+		} add = -1
+	}
+	if = { limit = { has_trait = cannibal
+		} add = -2
+	}
+	if = { limit = { has_trait = bossy
+		} add = 1
+	}
+	if = { limit = { has_trait = sickly
+		} add = -2
+	}
+	if = { limit = { has_trait = impotent
+		} add = -1
+	}
+	if = { limit = { has_trait = maimed
+		} add = -2
+	}
+	if = { limit = { has_trait = infirm
+		} add = -2
+	}
+	if = { limit = { has_trait = inbred
+		} add = -2
+	}
+	if = { limit = { has_trait = blind
+		} add = -2
+	}
+	if = { limit = { has_trait = disfigured
+		} add = -2
+	}
+	if = { limit = { has_trait = wounded
+		} add = -1
+	}
+	if = { limit = { has_trait = incapable
+		} add = -5
+	}
+}
+status_monthly_cap_value = {
+	value = 100
+}

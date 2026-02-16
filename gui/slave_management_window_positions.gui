@@ -82,7 +82,7 @@
 															resizeparent = no
 															parentanchor = top|hcenter
 															text_single = {
-																text = "[Character.GetFullNameNoTooltip]"
+																text = "status_tier: [Character.MakeScope.Var('status_tier').GetValue]"
 																align = center
 																fontsize = 21
 																max_width = 170
@@ -159,7 +159,7 @@
 															resizeparent = no
 															parentanchor = top|hcenter
 															text_single = {
-																text = "[Character.GetFullNameNoTooltip]"
+																text = "status_tier: [Character.MakeScope.Var('status_tier').GetValue]"
 																align = center
 																fontsize = 21
 																max_width = 170
@@ -237,7 +237,7 @@
 														resizeparent = no
 														parentanchor = top|hcenter
 														text_single = {
-															text = "[Character.GetFullNameNoTooltip]"
+															text = "status_tier: [Character.MakeScope.Var('status_tier').GetValue]"
 															align = center
 															fontsize = 21
 															max_width = 170
@@ -314,7 +314,7 @@
 														resizeparent = no
 														parentanchor = top|hcenter
 														text_single = {
-															text = "[Character.GetFullNameNoTooltip]"
+															text = "status_tier: [Character.MakeScope.Var('status_tier').GetValue]"
 															align = center
 															fontsize = 21
 															max_width = 170

@@ -26,6 +26,16 @@ toggle_slave_management_window = {
 				add_character_flag = wearing_revealing_clothes_2
 				add_character_flag = decorative_slave_haircut
 				add_character_flag = blocked_from_leaving
+				if = {
+					limit = {
+						NOT = { exists = var:status_tier
+						}
+					}
+					set_variable = {
+						name = status_tier
+						value = 1000
+					}
+				}
 				root = {
 					add_to_variable_list = {
 						name = decorative_slaves
@@ -44,6 +54,16 @@ toggle_slave_management_window = {
 				add_character_flag = wearing_revealing_clothes_2
 				add_character_flag = concubine_slave_haircut
 				add_character_flag = blocked_from_leaving
+				if = {
+					limit = {
+						NOT = { exists = var:status_tier
+						}
+					}
+					set_variable = {
+						name = status_tier
+						value = 2000
+					}
+				}
 				root = {
 					add_to_variable_list = {
 						name = concubine_slaves
@@ -62,6 +82,16 @@ toggle_slave_management_window = {
 				add_character_flag = wearing_revealing_clothes_2
 				add_character_flag = secondary_slave_haircut
 				add_character_flag = blocked_from_leaving
+				if = {
+					limit = {
+						NOT = { exists = var:status_tier
+						}
+					}
+					set_variable = {
+						name = status_tier
+						value = 3000
+					}
+				}
 				root = {
 					add_to_variable_list = {
 						name = secondary_slaves
@@ -72,6 +102,16 @@ toggle_slave_management_window = {
 			every_courtier_or_guest = {
 				limit = {
 					has_character_flag = great_slave_flag
+				}
+				if = {
+					limit = {
+						NOT = { exists = var:status_tier
+						}
+					}
+					set_variable = {
+						name = status_tier
+						value = 4000
+					}
 				}
 				root = {
 					add_to_variable_list = {
