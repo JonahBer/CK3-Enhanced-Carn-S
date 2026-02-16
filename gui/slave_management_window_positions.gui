@@ -1,4 +1,139 @@
 ﻿types SlavesPositions{
+	type slave_tier_section = flowcontainer {
+		direction = vertical
+		block "slave_tier_size" {
+			min_width = 1250
+			min_height = 380
+		}
+		flowcontainer = {
+			name = "header"
+			direction = horizontal
+			min_height = 30
+			block "slave_tier_header_width" {
+				min_width = 1250
+			}
+			background = {
+				using = Background_Area_Solid
+			}
+		}
+		scrollarea = {
+			block "slave_tier_scroll_size" {
+				minimumsize = { 1250 600
+				}
+			}
+			background = {
+				using = Background_Bottom_Fade
+			}
+			scrollwidget = {
+				flowcontainer = {
+					direction = horizontal
+					layoutpolicy_horizontal = expanding
+					min_height = 380
+					dynamicgridbox = {
+						block "slave_tier_datamodel" {
+						}
+						flipdirection = yes
+						item = {
+							flowcontainer = {
+								name = "big flow"
+								min_height = 335
+								allow_outside = no
+								margin = { 0 10
+								}
+								direction = horizontal
+								datacontext = "[Scope.GetCharacter]"
+								flowcontainer = {
+									direction = vertical
+									flowcontainer = {
+										resizeparent = no
+										parentanchor = top|hcenter
+										direction = vertical
+										spacing = 10
+										min_width = 330
+										text_single = {
+											parentanchor = top|hcenter
+											text = "[Character.GetNameNoTooltip] [Character.GetAge] ([Character.MakeScope.Var('status_tier').GetValue])"
+											align = center
+											fontsize = 21
+											max_width = 330
+											min_width = 330
+										}
+										flowcontainer = {
+											parentanchor = top|hcenter
+											direction = horizontal
+											spacing = 10
+											button_standard = {
+												size = { 44 44
+												}
+												icon = {
+													texture = "gfx/interface/icons/icon_trend_arrow.dds"
+													framesize = { 22 22
+													}
+													size = { 100% 100%
+													}
+												}
+												onclick = "[GetScriptedGui('slave_mgmt_promote').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'slave', Character.MakeScope ).End )]"
+											}
+											button_standard = {
+												size = { 44 44
+												}
+												icon = {
+													texture = "gfx/interface/icons/icon_trend_arrow.dds"
+													framesize = { 22 22
+													}
+													frame = 2
+													size = { 100% 100%
+													}
+												}
+												onclick = "[GetScriptedGui('slave_mgmt_demote').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'slave', Character.MakeScope ).End )]"
+											}
+											button_standard = {
+												size = { 44 44
+												}
+												icon_flat_standard_gold = {
+													size = { 100% 100%
+													}
+													texture = "gfx/interface/icons/flat_icons/plus.dds"
+												}
+											}
+											button_standard = {
+												size = { 44 44
+												}
+												icon_flat_standard_red = {
+													size = { 100% 100%
+													}
+													texture = "gfx/interface/icons/flat_icons/cancel.dds"
+												}
+											}
+										}
+										background = {
+											using = Background_Area_ExtraDark
+											margin_top = 10
+											margin_left = 20
+											margin_right = 20
+											margin_bottom = 20
+										}
+									}
+									portrait_body_large = {
+									}
+									background = {
+										using = Background_Area
+										margin_bottom = 20
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			scrollbar_horizontal = {
+				using = Scrollbar_Horizontal
+			}
+			scrollbarpolicy_horizontal = always_on
+			scrollbarpolicy_vertical = always_off
+			scrollbaralign_horizontal = bottom
+		}
+	}
 	type vbox_slave_positions_tiers = vbox {
 		layoutpolicy_horizontal = expanding
 		spacing = 5
@@ -32,6 +167,7 @@
 					layoutpolicy_vertical = expanding
 					direction = vertical
 					spacing = 40
+					### First Row: Great Wives + Secondary Wives side by side ###
 					flowcontainer = {
 						name = "First Row"
 						direction = horizontal
@@ -39,365 +175,57 @@
 						max_width = 1280
 						min_height = 600
 						spacing = 30
-						flowcontainer = {
+						slave_tier_section = {
 							name = "greatwife"
-							direction = vertical
-							min_width = 450
-							min_height = 380
-							flowcontainer = {
-								name = "header"
-								direction = horizontal
+							blockoverride "slave_tier_size" {
+								min_width = 450
+								min_height = 380
+							}
+							blockoverride "slave_tier_header_width" {
 								min_width = 430
-								min_height = 30
-								background = {
-									using = Background_Area_Solid
+							}
+							blockoverride "slave_tier_scroll_size" {
+								minimumsize = { 430 600
 								}
 							}
-							scrollarea = {
-								minimumsize = {430 600
-								}
-								background = {
-									using = Background_Bottom_Fade
-								}
-								scrollwidget = {
-									flowcontainer = {
-										direction = horizontal
-										layoutpolicy_horizontal = expanding
-										min_height = 380
-										dynamicgridbox = {
-											datamodel = "[GetPlayer.MakeScope.GetList('great_slaves')]"
-											flipdirection = yes
-											item = {
-												flowcontainer = {
-													name = "big flow"
-													min_height = 335
-													allow_outside = no
-													margin = { 8 10
-													}
-													direction = horizontal
-													datacontext = "[Scope.GetCharacter]"
-													flowcontainer = {
-														direction = vertical
-														flowcontainer = {
-															resizeparent = no
-															parentanchor = top|hcenter
-															text_single = {
-																text = "status_tier: [Character.MakeScope.Var('status_tier').GetValue]"
-																align = center
-																fontsize = 21
-																max_width = 170
-																min_width = 170
-															}
-															background = {
-																using=Background_Area_ExtraDark
-																margin_top = 10
-																margin_left = 20
-																margin_right = 20
-																margin_bottom = 20
-															}
-														}
-														portrait_body_large= {
-														}
-														background = {
-															using = Background_Area
-															margin_bottom = 20
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-								scrollbar_horizontal = {
-									using = Scrollbar_Horizontal
-								}
-								scrollbarpolicy_horizontal = always_on
-								scrollbarpolicy_vertical = always_off
-								scrollbaralign_horizontal = bottom
+							blockoverride "slave_tier_datamodel" {
+								datamodel = "[GetPlayer.MakeScope.GetList('great_slaves')]"
 							}
 						}
-						flowcontainer = {
+						slave_tier_section = {
 							name = "secwife"
-							direction = vertical
-							min_width = 770
-							min_height = 380
-							flowcontainer = {
-								name = "header"
-								direction = horizontal
+							blockoverride "slave_tier_size" {
 								min_width = 770
-								min_height = 30
-								background = {
-									using = Background_Area_Solid
+								min_height = 380
+							}
+							blockoverride "slave_tier_header_width" {
+								min_width = 770
+							}
+							blockoverride "slave_tier_scroll_size" {
+								minimumsize = { 770 600
 								}
 							}
-							scrollarea = {
-								minimumsize = {770 600
-								}
-								background = {
-									using = Background_Bottom_Fade
-								}
-								scrollwidget = {
-									flowcontainer = {
-										direction = horizontal
-										layoutpolicy_horizontal = expanding
-										min_height = 380
-										dynamicgridbox = {
-											datamodel = "[GetPlayer.MakeScope.GetList('secondary_slaves')]"
-											flipdirection = yes
-											item = {
-												flowcontainer = {
-													name = "big flow"
-													min_height = 335
-													allow_outside = no
-													margin = { 8 10
-													}
-													direction = horizontal
-													datacontext = "[Scope.GetCharacter]"
-													flowcontainer = {
-														direction = vertical
-														flowcontainer = {
-															resizeparent = no
-															parentanchor = top|hcenter
-															text_single = {
-																text = "status_tier: [Character.MakeScope.Var('status_tier').GetValue]"
-																align = center
-																fontsize = 21
-																max_width = 170
-																min_width = 170
-															}
-															background = {
-																using=Background_Area_ExtraDark
-																margin_top = 10
-																margin_left = 20
-																margin_right = 20
-																margin_bottom = 20
-															}
-														}
-														portrait_body_large= {
-														}
-														background = {
-															using = Background_Area
-															margin_bottom = 20
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-								scrollbar_horizontal = {
-									using = Scrollbar_Horizontal
-								}
-								scrollbarpolicy_horizontal = always_on
-								scrollbarpolicy_vertical = always_off
-								scrollbaralign_horizontal = bottom
+							blockoverride "slave_tier_datamodel" {
+								datamodel = "[GetPlayer.MakeScope.GetList('secondary_slaves')]"
 							}
 						}
 					}
-					flowcontainer = {
+					### Second Row: Concubine Slaves ###
+					slave_tier_section = {
 						name = "Second Row"
-						direction = vertical
-						min_width = 1250
-						min_height = 600
-						flowcontainer = {
-							name = "header"
-							direction = horizontal
-							min_width = 1250
-							min_height = 30
-							background = {
-								using = Background_Area_Solid
-							}
-						}
-						scrollarea = {
-							minimumsize = {1250 600
-							}
-							background = {
-								using = Background_Bottom_Fade
-							}
-							scrollwidget = {
-								flowcontainer = {
-									direction = horizontal
-									layoutpolicy_horizontal = expanding
-									min_height = 380
-									dynamicgridbox = {
-										datamodel = "[GetPlayer.MakeScope.GetList('concubine_slaves')]"
-										flipdirection = yes
-										item = {
-											flowcontainer = {
-												name = "big flow"
-												min_height = 335
-												allow_outside = no
-												margin = { 8 10
-												}
-												direction = horizontal
-												datacontext = "[Scope.GetCharacter]"
-												flowcontainer = {
-													direction = vertical
-													flowcontainer = {
-														resizeparent = no
-														parentanchor = top|hcenter
-														text_single = {
-															text = "status_tier: [Character.MakeScope.Var('status_tier').GetValue]"
-															align = center
-															fontsize = 21
-															max_width = 170
-															min_width = 170
-														}
-														background = {
-															using=Background_Area_ExtraDark
-															margin_top = 10
-															margin_left = 20
-															margin_right = 20
-															margin_bottom = 20
-														}
-													}
-													portrait_body_large= {
-													}
-													background = {
-														using = Background_Area
-														margin_bottom = 20
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-							scrollbar_horizontal = {
-								using = Scrollbar_Horizontal
-							}
-							scrollbarpolicy_horizontal = always_on
-							scrollbarpolicy_vertical = always_off
-							scrollbaralign_horizontal = bottom
+						blockoverride "slave_tier_datamodel" {
+							datamodel = "[GetPlayer.MakeScope.GetList('concubine_slaves')]"
 						}
 					}
-					flowcontainer = {
+					### Third Row: Decorative Slaves ###
+					slave_tier_section = {
 						name = "Third Row"
-						direction = vertical
-						min_width = 1250
-						min_height = 600
-						flowcontainer = {
-							name = "header"
-							direction = horizontal
-							min_width = 1250
-							min_height = 30
-							background = {
-								using = Background_Area_Solid
+						blockoverride "slave_tier_scroll_size" {
+							minimumsize = { 1250 700
 							}
 						}
-						scrollarea = {
-							minimumsize = {1250 700
-							}
-							background = {
-								using = Background_Bottom_Fade
-							}
-							scrollwidget = {
-								flowcontainer = {
-									direction = horizontal
-									layoutpolicy_horizontal = expanding
-									min_height = 380
-									dynamicgridbox = {
-										datamodel = "[GetPlayer.MakeScope.GetList('decorative_slaves')]"
-										flipdirection = yes
-										item = {
-											flowcontainer = {
-												name = "big flow"
-												min_height = 335
-												allow_outside = no
-												margin = { 0 10
-												}
-												direction = horizontal
-												datacontext = "[Scope.GetCharacter]"
-												flowcontainer = {
-													direction = vertical
-													flowcontainer = {
-														resizeparent = no
-														parentanchor = top|hcenter
-														direction = vertical
-														spacing = 10
-														min_width = 330
-														text_single = {
-															parentanchor = top|hcenter
-															text = "[Character.GetNameNoTooltip] [Character.GetAge] ([Character.MakeScope.Var('status_tier').GetValue])"
-															align = center
-															fontsize = 21
-															max_width = 330
-															min_width = 330
-														}
-														flowcontainer = {
-															parentanchor = top|hcenter
-															direction = horizontal
-															spacing = 10
-															button_standard = {
-																size = { 44 44
-																}
-																icon = {
-																	texture = "gfx/interface/icons/icon_trend_arrow.dds"
-																	framesize = { 22 22
-																	}
-																	size = { 100% 100%
-																	}
-																}
-																onclick = "[GetScriptedGui('slave_mgmt_promote').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'slave', Character.MakeScope ).End )]"
-															}
-															button_standard = {
-																size = { 44 44
-																}
-																icon = {
-																	texture = "gfx/interface/icons/icon_trend_arrow.dds"
-																	framesize = { 22 22
-																	}
-																	frame = 2
-																	size = { 100% 100%
-																	}
-																}
-																onclick = "[GetScriptedGui('slave_mgmt_demote').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'slave', Character.MakeScope ).End )]"
-															}
-															button_standard = {
-																size = { 44 44
-																}
-																icon_flat_standard_gold = {
-																	size = { 100% 100%
-																	}
-																	texture = "gfx/interface/icons/flat_icons/plus.dds"
-																}
-															}
-															button_standard = {
-																size = { 44 44
-																}
-																icon_flat_standard_red = {
-																	size = { 100% 100%
-																	}
-																	texture = "gfx/interface/icons/flat_icons/cancel.dds"
-																}
-															}
-														}
-														background = {
-															using=Background_Area_ExtraDark
-															margin_top = 10
-															margin_left = 20
-															margin_right = 20
-															margin_bottom = 20
-														}
-													}
-													portrait_body_large= {
-													}
-													background = {
-														using = Background_Area
-														margin_bottom = 20
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-							scrollbar_horizontal = {
-								using = Scrollbar_Horizontal
-							}
-							scrollbarpolicy_horizontal = always_on
-							scrollbarpolicy_vertical = always_off
-							scrollbaralign_horizontal = bottom
+						blockoverride "slave_tier_datamodel" {
+							datamodel = "[GetPlayer.MakeScope.GetList('decorative_slaves')]"
 						}
 					}
 				}
