@@ -286,7 +286,7 @@
 							}
 						}
 						scrollarea = {
-							minimumsize = {1250 600
+							minimumsize = {1250 700
 							}
 							background = {
 								using = Background_Bottom_Fade
@@ -313,12 +313,64 @@
 													flowcontainer = {
 														resizeparent = no
 														parentanchor = top|hcenter
+														direction = vertical
+														spacing = 10
+														min_width = 330
 														text_single = {
-															text = "status_tier: [Character.MakeScope.Var('status_tier').GetValue]"
+															parentanchor = top|hcenter
+															text = "[Character.GetNameNoTooltip] [Character.GetAge] ([Character.MakeScope.Var('status_tier').GetValue])"
 															align = center
 															fontsize = 21
-															max_width = 170
-															min_width = 170
+															max_width = 330
+															min_width = 330
+														}
+														flowcontainer = {
+															parentanchor = top|hcenter
+															direction = horizontal
+															spacing = 10
+															button_standard = {
+																size = { 44 44
+																}
+																icon = {
+																	texture = "gfx/interface/icons/icon_trend_arrow.dds"
+																	framesize = { 22 22
+																	}
+																	size = { 100% 100%
+																	}
+																}
+																onclick = "[GetScriptedGui('slave_mgmt_promote').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'slave', Character.MakeScope ).End )]"
+															}
+															button_standard = {
+																size = { 44 44
+																}
+																icon = {
+																	texture = "gfx/interface/icons/icon_trend_arrow.dds"
+																	framesize = { 22 22
+																	}
+																	frame = 2
+																	size = { 100% 100%
+																	}
+																}
+																onclick = "[GetScriptedGui('slave_mgmt_demote').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'slave', Character.MakeScope ).End )]"
+															}
+															button_standard = {
+																size = { 44 44
+																}
+																icon_flat_standard_gold = {
+																	size = { 100% 100%
+																	}
+																	texture = "gfx/interface/icons/flat_icons/plus.dds"
+																}
+															}
+															button_standard = {
+																size = { 44 44
+																}
+																icon_flat_standard_red = {
+																	size = { 100% 100%
+																	}
+																	texture = "gfx/interface/icons/flat_icons/cancel.dds"
+																}
+															}
 														}
 														background = {
 															using=Background_Area_ExtraDark

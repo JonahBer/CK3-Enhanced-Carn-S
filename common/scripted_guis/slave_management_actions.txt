@@ -1,0 +1,87 @@
+﻿# common/scripted_guis/slave_management_actions.txt
+#
+# EXACTLY matches debug_interactions tier-set behavior, but on scope:slave:
+# - remove the other 3 tier flags
+# - add the desired tier flag via add_character_flag = { flag = ... }
+#
+# Scopes:
+# - ROOT = player (GuiScope.SetRoot(GetPlayer.MakeScope))
+# - scope:slave = selected character passed from GUI via AddScope('slave', Character.MakeScope)
+slave_mgmt_promote = {
+	scope = character
+	saved_scopes = { slave
+	}
+	effect = {
+		scope:slave = {
+			if = {
+				limit = { has_character_flag = decorative_slave_flag
+				}
+				# EXACTLY debug_set_tier_concubine_slave_flag logic
+				remove_character_flag = decorative_slave_flag
+				remove_character_flag = secondary_slave_flag
+				remove_character_flag = great_slave_flag
+				add_character_flag = { flag = concubine_slave_flag
+				}
+			}
+			else_if = {
+				limit = { has_character_flag = concubine_slave_flag
+				}
+				# EXACTLY debug_set_tier_secondary_slave_flag logic
+				remove_character_flag = decorative_slave_flag
+				remove_character_flag = concubine_slave_flag
+				remove_character_flag = great_slave_flag
+				add_character_flag = { flag = secondary_slave_flag
+				}
+			}
+			else_if = {
+				limit = { has_character_flag = secondary_slave_flag
+				}
+				# EXACTLY debug_set_tier_great_slave_flag logic
+				remove_character_flag = decorative_slave_flag
+				remove_character_flag = concubine_slave_flag
+				remove_character_flag = secondary_slave_flag
+				add_character_flag = { flag = great_slave_flag
+				}
+			}
+		}
+	}
+}
+slave_mgmt_demote = {
+	scope = character
+	saved_scopes = { slave
+	}
+	effect = {
+		scope:slave = {
+			if = {
+				limit = { has_character_flag = great_slave_flag
+				}
+				# EXACTLY debug_set_tier_secondary_slave_flag logic
+				remove_character_flag = decorative_slave_flag
+				remove_character_flag = concubine_slave_flag
+				remove_character_flag = great_slave_flag
+				add_character_flag = { flag = secondary_slave_flag
+				}
+			}
+			else_if = {
+				limit = { has_character_flag = secondary_slave_flag
+				}
+				# EXACTLY debug_set_tier_concubine_slave_flag logic
+				remove_character_flag = decorative_slave_flag
+				remove_character_flag = secondary_slave_flag
+				remove_character_flag = great_slave_flag
+				add_character_flag = { flag = concubine_slave_flag
+				}
+			}
+			else_if = {
+				limit = { has_character_flag = concubine_slave_flag
+				}
+				# EXACTLY debug_set_tier_decorative_slave_flag logic
+				remove_character_flag = concubine_slave_flag
+				remove_character_flag = secondary_slave_flag
+				remove_character_flag = great_slave_flag
+				add_character_flag = { flag = decorative_slave_flag
+				}
+			}
+		}
+	}
+}
