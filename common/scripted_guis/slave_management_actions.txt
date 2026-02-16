@@ -22,6 +22,16 @@ slave_mgmt_promote = {
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = concubine_slave_flag
 				}
+				root = {
+					remove_list_variable = {
+						name = decorative_slaves
+						target = prev
+					}
+					add_to_variable_list = {
+						name = concubine_slaves
+						target = prev
+					}
+				}
 			}
 			else_if = {
 				limit = { has_character_flag = concubine_slave_flag
@@ -32,6 +42,16 @@ slave_mgmt_promote = {
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = secondary_slave_flag
 				}
+				root = {
+					remove_list_variable = {
+						name = concubine_slaves
+						target = prev
+					}
+					add_to_variable_list = {
+						name = secondary_slaves
+						target = prev
+					}
+				}
 			}
 			else_if = {
 				limit = { has_character_flag = secondary_slave_flag
@@ -41,6 +61,16 @@ slave_mgmt_promote = {
 				remove_character_flag = concubine_slave_flag
 				remove_character_flag = secondary_slave_flag
 				add_character_flag = { flag = great_slave_flag
+				}
+				root = {
+					remove_list_variable = {
+						name = secondary_slaves
+						target = prev
+					}
+					add_to_variable_list = {
+						name = great_slaves
+						target = prev
+					}
 				}
 			}
 		}
@@ -61,6 +91,16 @@ slave_mgmt_demote = {
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = secondary_slave_flag
 				}
+				root = {
+					remove_list_variable = {
+						name = great_slaves
+						target = prev
+					}
+					add_to_variable_list = {
+						name = secondary_slaves
+						target = prev
+					}
+				}
 			}
 			else_if = {
 				limit = { has_character_flag = secondary_slave_flag
@@ -71,6 +111,16 @@ slave_mgmt_demote = {
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = concubine_slave_flag
 				}
+				root = {
+					remove_list_variable = {
+						name = secondary_slaves
+						target = prev
+					}
+					add_to_variable_list = {
+						name = concubine_slaves
+						target = prev
+					}
+				}
 			}
 			else_if = {
 				limit = { has_character_flag = concubine_slave_flag
@@ -80,6 +130,16 @@ slave_mgmt_demote = {
 				remove_character_flag = secondary_slave_flag
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = decorative_slave_flag
+				}
+				root = {
+					remove_list_variable = {
+						name = concubine_slaves
+						target = prev
+					}
+					add_to_variable_list = {
+						name = decorative_slaves
+						target = prev
+					}
 				}
 			}
 		}
