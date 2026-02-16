@@ -22,6 +22,10 @@ slave_mgmt_promote = {
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = concubine_slave_flag
 				}
+				set_variable = {
+					name = status_tier
+					value = 2000
+				}
 				root = {
 					remove_list_variable = {
 						name = decorative_slaves
@@ -42,6 +46,10 @@ slave_mgmt_promote = {
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = secondary_slave_flag
 				}
+				set_variable = {
+					name = status_tier
+					value = 3000
+				}
 				root = {
 					remove_list_variable = {
 						name = concubine_slaves
@@ -61,6 +69,10 @@ slave_mgmt_promote = {
 				remove_character_flag = concubine_slave_flag
 				remove_character_flag = secondary_slave_flag
 				add_character_flag = { flag = great_slave_flag
+				}
+				set_variable = {
+					name = status_tier
+					value = 4000
 				}
 				root = {
 					remove_list_variable = {
@@ -91,6 +103,10 @@ slave_mgmt_demote = {
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = secondary_slave_flag
 				}
+				set_variable = {
+					name = status_tier
+					value = 3000
+				}
 				root = {
 					remove_list_variable = {
 						name = great_slaves
@@ -111,6 +127,10 @@ slave_mgmt_demote = {
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = concubine_slave_flag
 				}
+				set_variable = {
+					name = status_tier
+					value = 2000
+				}
 				root = {
 					remove_list_variable = {
 						name = secondary_slaves
@@ -130,6 +150,10 @@ slave_mgmt_demote = {
 				remove_character_flag = secondary_slave_flag
 				remove_character_flag = great_slave_flag
 				add_character_flag = { flag = decorative_slave_flag
+				}
+				set_variable = {
+					name = status_tier
+					value = 1000
 				}
 				root = {
 					remove_list_variable = {

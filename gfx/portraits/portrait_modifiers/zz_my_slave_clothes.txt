@@ -63,7 +63,7 @@ concubine_slave_haircut  = {
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = fp1_hairstyles_straight
+				template = northern_hairstyles_straight
 				range = { 0 1
 				} # For the randomness to work correctly
 			}
