@@ -35,6 +35,14 @@ slave_mgmt_promote = {
 						name = concubine_slaves
 						target = prev
 					}
+					change_variable = {
+						name = decorative_slaves_count
+						add = -1
+					}
+					change_variable = {
+						name = concubine_slaves_count
+						add = 1
+					}
 				}
 			}
 			else_if = {
@@ -59,6 +67,14 @@ slave_mgmt_promote = {
 						name = secondary_slaves
 						target = prev
 					}
+					change_variable = {
+						name = concubine_slaves_count
+						add = -1
+					}
+					change_variable = {
+						name = secondary_slaves_count
+						add = 1
+					}
 				}
 			}
 			else_if = {
@@ -82,6 +98,14 @@ slave_mgmt_promote = {
 					add_to_variable_list = {
 						name = great_slaves
 						target = prev
+					}
+					change_variable = {
+						name = secondary_slaves_count
+						add = -1
+					}
+					change_variable = {
+						name = great_slaves_count
+						add = 1
 					}
 				}
 			}
@@ -116,6 +140,14 @@ slave_mgmt_demote = {
 						name = secondary_slaves
 						target = prev
 					}
+					change_variable = {
+						name = great_slaves_count
+						add = -1
+					}
+					change_variable = {
+						name = secondary_slaves_count
+						add = 1
+					}
 				}
 			}
 			else_if = {
@@ -140,6 +172,14 @@ slave_mgmt_demote = {
 						name = concubine_slaves
 						target = prev
 					}
+					change_variable = {
+						name = secondary_slaves_count
+						add = -1
+					}
+					change_variable = {
+						name = concubine_slaves_count
+						add = 1
+					}
 				}
 			}
 			else_if = {
@@ -163,6 +203,14 @@ slave_mgmt_demote = {
 					add_to_variable_list = {
 						name = decorative_slaves
 						target = prev
+					}
+					change_variable = {
+						name = concubine_slaves_count
+						add = -1
+					}
+					change_variable = {
+						name = decorative_slaves_count
+						add = 1
 					}
 				}
 			}
