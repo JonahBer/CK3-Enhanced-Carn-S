@@ -48,6 +48,23 @@ toggle_slave_management_window = {
 					name = great_slaves_count
 					value = 0
 				}
+				# ── Tier cap initialization (reset every window open) ──
+				set_variable = {
+					name = max_decorative_slaves
+					value = 10
+				}
+				set_variable = {
+					name = max_concubine_slaves
+					value = 5
+				}
+				set_variable = {
+					name = max_secondary_slaves
+					value = 3
+				}
+				set_variable = {
+					name = max_great_slaves
+					value = 1
+				}
 			}
 			every_courtier_or_guest = {
 				limit = {

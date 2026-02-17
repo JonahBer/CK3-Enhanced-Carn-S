@@ -4,6 +4,12 @@
 # - remove the other 3 tier flags
 # - add the desired tier flag via add_character_flag = { flag = ... }
 #
+# Now includes max-count checks per tier. Each promote/demote block verifies
+# that the TARGET tier has not reached its cap before allowing the transition.
+# Max values are stored as variables on root (the player character):
+#   max_decorative_slaves, max_concubine_slaves, max_secondary_slaves, max_great_slaves
+# These are initialized in toggle_slave_management_window on window open.
+#
 # Scopes:
 # - ROOT = player (GuiScope.SetRoot(GetPlayer.MakeScope))
 # - scope:slave = selected character passed from GUI via AddScope('slave', Character.MakeScope)
@@ -13,8 +19,11 @@ slave_mgmt_promote = {
 	}
 	effect = {
 		scope:slave = {
+			# ── decorative → concubine ──
 			if = {
-				limit = { has_character_flag = decorative_slave_flag
+				limit = {
+					has_character_flag = decorative_slave_flag
+					root.var:concubine_slaves_count < root.var:max_concubine_slaves
 				}
 				# EXACTLY debug_set_tier_concubine_slave_flag logic
 				remove_character_flag = decorative_slave_flag
@@ -45,8 +54,11 @@ slave_mgmt_promote = {
 					}
 				}
 			}
+			# ── concubine → secondary ──
 			else_if = {
-				limit = { has_character_flag = concubine_slave_flag
+				limit = {
+					has_character_flag = concubine_slave_flag
+					root.var:secondary_slaves_count < root.var:max_secondary_slaves
 				}
 				# EXACTLY debug_set_tier_secondary_slave_flag logic
 				remove_character_flag = decorative_slave_flag
@@ -77,8 +89,11 @@ slave_mgmt_promote = {
 					}
 				}
 			}
+			# ── secondary → great ──
 			else_if = {
-				limit = { has_character_flag = secondary_slave_flag
+				limit = {
+					has_character_flag = secondary_slave_flag
+					root.var:great_slaves_count < root.var:max_great_slaves
 				}
 				# EXACTLY debug_set_tier_great_slave_flag logic
 				remove_character_flag = decorative_slave_flag
@@ -118,8 +133,11 @@ slave_mgmt_demote = {
 	}
 	effect = {
 		scope:slave = {
+			# ── great → secondary ──
 			if = {
-				limit = { has_character_flag = great_slave_flag
+				limit = {
+					has_character_flag = great_slave_flag
+					root.var:secondary_slaves_count < root.var:max_secondary_slaves
 				}
 				# EXACTLY debug_set_tier_secondary_slave_flag logic
 				remove_character_flag = decorative_slave_flag
@@ -150,8 +168,11 @@ slave_mgmt_demote = {
 					}
 				}
 			}
+			# ── secondary → concubine ──
 			else_if = {
-				limit = { has_character_flag = secondary_slave_flag
+				limit = {
+					has_character_flag = secondary_slave_flag
+					root.var:concubine_slaves_count < root.var:max_concubine_slaves
 				}
 				# EXACTLY debug_set_tier_concubine_slave_flag logic
 				remove_character_flag = decorative_slave_flag
@@ -182,8 +203,11 @@ slave_mgmt_demote = {
 					}
 				}
 			}
+			# ── concubine → decorative ──
 			else_if = {
-				limit = { has_character_flag = concubine_slave_flag
+				limit = {
+					has_character_flag = concubine_slave_flag
+					root.var:decorative_slaves_count < root.var:max_decorative_slaves
 				}
 				# EXACTLY debug_set_tier_decorative_slave_flag logic
 				remove_character_flag = concubine_slave_flag
