@@ -51,11 +51,11 @@ toggle_slave_management_window = {
 				# ── Tier cap initialization (reset every window open) ──
 				set_variable = {
 					name = max_decorative_slaves
-					value = 10
+					value = 30
 				}
 				set_variable = {
 					name = max_concubine_slaves
-					value = 5
+					value = 10
 				}
 				set_variable = {
 					name = max_secondary_slaves
