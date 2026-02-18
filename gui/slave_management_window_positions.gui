@@ -483,7 +483,7 @@
 							}
 							blockoverride "slave_tier_header_text" {
 								text_single = {
-									text = "Secondary Slaves ([GetPlayer.MakeScope.Var('secondary_slaves_count').GetValue|0])"
+									text = "Secondary Slaves ([GetPlayer.MakeScope.Var('secondary_slaves_count').GetValue|0] / [GetPlayer.MakeScope.Var('max_secondary_slaves').GetValue|0])"
 									parentanchor = vcenter
 									margin_left = 10
 									fontsize = 18
@@ -503,7 +503,7 @@
 						name = "Second Row"
 						blockoverride "slave_tier_header_text" {
 							text_single = {
-								text = "Concubine Slaves ([GetPlayer.MakeScope.Var('concubine_slaves_count').GetValue|0])"
+								text = "Concubine Slaves ([GetPlayer.MakeScope.Var('concubine_slaves_count').GetValue|0] / [GetPlayer.MakeScope.Var('max_concubine_slaves').GetValue|0])"
 								parentanchor = vcenter
 								margin_left = 10
 								fontsize = 18
@@ -518,7 +518,7 @@
 						name = "Third Row"
 						blockoverride "slave_tier_header_text" {
 							text_single = {
-								text = "Decorative Slaves ([GetPlayer.MakeScope.Var('decorative_slaves_count').GetValue|0])"
+								text = "Decorative Slaves ([GetPlayer.MakeScope.Var('decorative_slaves_count').GetValue|0] / [GetPlayer.MakeScope.Var('max_decorative_slaves').GetValue|0])"
 								parentanchor = vcenter
 								margin_left = 10
 								fontsize = 18
