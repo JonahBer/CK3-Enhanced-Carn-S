@@ -265,3 +265,112 @@ slave_mgmt_invite = {
 		}
 	}
 }
+slave_mgmt_free = {
+	scope = character
+	saved_scopes = { slave
+	}
+	effect = {
+		scope:slave = {
+			# ── great ──
+			if = {
+				limit = {
+					has_character_flag = great_slave_flag
+				}
+				remove_character_flag = decorative_slave_flag
+				remove_character_flag = concubine_slave_flag
+				remove_character_flag = great_slave_flag
+				remove_character_flag = secondary_slave_flag
+				set_variable = {
+					name = status_tier
+					value = 1000
+				}
+				root = {
+					remove_list_variable = {
+						name = great_slaves
+						target = prev
+					}
+					change_variable = {
+						name = great_slaves_count
+						add = -1
+					}
+					remove_relation_slave = prev
+				}
+			}
+			# ── secondary ──
+			else_if = {
+				limit = {
+					has_character_flag = secondary_slave_flag
+				}
+				remove_character_flag = decorative_slave_flag
+				remove_character_flag = concubine_slave_flag
+				remove_character_flag = great_slave_flag
+				remove_character_flag = secondary_slave_flag
+				set_variable = {
+					name = status_tier
+					value = 1000
+				}
+				root = {
+					remove_list_variable = {
+						name = secondary_slaves
+						target = prev
+					}
+					change_variable = {
+						name = secondary_slaves_count
+						add = -1
+					}
+					remove_relation_slave = prev
+				}
+			}
+			# ── concubine ──
+			else_if = {
+				limit = {
+					has_character_flag = concubine_slave_flag
+				}
+				remove_character_flag = decorative_slave_flag
+				remove_character_flag = concubine_slave_flag
+				remove_character_flag = great_slave_flag
+				remove_character_flag = secondary_slave_flag
+				set_variable = {
+					name = status_tier
+					value = 1000
+				}
+				root = {
+					remove_list_variable = {
+						name = concubine_slaves
+						target = prev
+					}
+					change_variable = {
+						name = concubine_slaves_count
+						add = -1
+					}
+					remove_relation_slave = prev
+				}
+			}
+			# ── decorative ──
+			else_if = {
+				limit = {
+					has_character_flag = decorative_slave_flag
+				}
+				remove_character_flag = decorative_slave_flag
+				remove_character_flag = concubine_slave_flag
+				remove_character_flag = great_slave_flag
+				remove_character_flag = secondary_slave_flag
+				set_variable = {
+					name = status_tier
+					value = 1000
+				}
+				root = {
+					remove_list_variable = {
+						name = decorative_slaves
+						target = prev
+					}
+					change_variable = {
+						name = decorative_slaves_count
+						add = -1
+					}
+					remove_relation_slave = prev
+				}
+			}
+		}
+	}
+}

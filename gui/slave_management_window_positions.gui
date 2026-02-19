@@ -107,6 +107,7 @@
 													}
 													texture = "gfx/interface/icons/flat_icons/cancel.dds"
 												}
+												onclick = "[GetScriptedGui('slave_mgmt_free').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'slave', Character.MakeScope ).End )]"
 											}
 										}
 										background = {
@@ -196,7 +197,7 @@
 								}
 							}
 							blockoverride "slave_tier_scroll_size" {
-								minimumsize = { 430 600
+								minimumsize = { 430 700
 								}
 							}
 							blockoverride "slave_tier_datamodel" {
@@ -221,7 +222,7 @@
 								}
 							}
 							blockoverride "slave_tier_scroll_size" {
-								minimumsize = { 770 600
+								minimumsize = { 770 700
 								}
 							}
 							blockoverride "slave_tier_datamodel" {
@@ -238,6 +239,10 @@
 								parentanchor = vcenter
 								margin_left = 10
 								fontsize = 18
+							}
+						}
+						blockoverride "slave_tier_scroll_size" {
+							minimumsize = { 1250 700
 							}
 						}
 						blockoverride "slave_tier_datamodel" {
