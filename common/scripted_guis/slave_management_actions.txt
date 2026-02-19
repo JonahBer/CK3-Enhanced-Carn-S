@@ -241,3 +241,27 @@ slave_mgmt_demote = {
 		}
 	}
 }
+slave_mgmt_invite = {
+	scope = character
+	saved_scopes = { encounter_slave
+	}
+	effect = {
+		random = {
+			chance = 50
+			random_list = {
+				100 = { trigger_event = slave_encounter_direct.1001
+				}
+				100 = { trigger_event = slave_encounter_direct.1002
+				}
+				100 = { trigger_event = slave_encounter_direct.1003
+				}
+				100 = { trigger_event = slave_encounter_direct.1004
+				}
+				100 = { trigger_event = slave_encounter_direct.1005
+				}
+				100 = { trigger_event = slave_encounter_direct.1006
+				}
+			}
+		}
+	}
+}

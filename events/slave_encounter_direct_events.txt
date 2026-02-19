@@ -1,0 +1,291 @@
+﻿namespace = slave_encounter_direct
+slave_encounter_direct.1001 = {
+	type = character_event
+	title = slave_encounter.1001.t
+	desc = slave_encounter.1001.desc
+	theme = seduction
+	left_portrait = {
+		character = root
+		animation = personality_calm
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = idle
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+	}
+	option = {
+		name = slave_encounter.1001.a
+		add_prestige = 5
+		stress_impact = { base = -5
+		}
+	}
+	option = {
+		name = slave_encounter.1001.b
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 10
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1001.c
+		add_dread = 2
+	}
+}
+slave_encounter_direct.1002 = {
+	type = character_event
+	title = slave_encounter.1002.t
+	desc = slave_encounter.1002.desc
+	theme = seduction
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = shame
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+	}
+	option = {
+		name = slave_encounter.1002.a
+		stress_impact = { base = -5
+		}
+	}
+	option = {
+		name = slave_encounter.1002.b
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1002.c
+		add_dread = 3
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -10
+			}
+		}
+	}
+}
+slave_encounter_direct.1003 = {
+	type = character_event
+	title = slave_encounter.1003.t
+	desc = slave_encounter.1003.desc
+	theme = friendly
+	left_portrait = {
+		character = root
+		animation = personality_content
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = worry
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+	}
+	option = {
+		name = slave_encounter.1003.a
+		stress_impact = { base = -10
+		}
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 10
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1003.b
+		add_dread = 2
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -5
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1003.c
+	}
+}
+slave_encounter_direct.1004 = {
+	type = character_event
+	title = slave_encounter.1004.t
+	desc = slave_encounter.1004.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = stress
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+	}
+	option = {
+		name = slave_encounter.1004.a
+		add_prestige = 5
+	}
+	option = {
+		name = slave_encounter.1004.b
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		stress_impact = { base = -5
+		}
+	}
+	option = {
+		name = slave_encounter.1004.c
+		add_dread = 5
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -10
+			}
+		}
+	}
+}
+slave_encounter_direct.1005 = {
+	type = character_event
+	title = slave_encounter.1005.t
+	desc = slave_encounter.1005.desc
+	theme = education
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = idle
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+	}
+	option = {
+		name = slave_encounter.1005.a
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 15
+			}
+		}
+		stress_impact = { base = -10
+		}
+	}
+	option = {
+		name = slave_encounter.1005.b
+		add_prestige = 10
+	}
+	option = {
+		name = slave_encounter.1005.c
+		add_dread = 3
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -15
+			}
+		}
+	}
+}
+slave_encounter_direct.1006 = {
+	type = character_event
+	title = slave_encounter.1006.t
+	desc = slave_encounter.1006.desc
+	theme = seduction
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	right_portrait = {
+		trigger = { exists = scope:encounter_slave
+		}
+		character = scope:encounter_slave
+		animation = shame
+	}
+	immediate = {
+		add_character_flag = {
+			flag = slave_encounter_cooldown
+			days = 60
+		}
+	}
+	option = {
+		name = slave_encounter.1006.a
+		stress_impact = { base = -15
+		}
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 10
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1006.b
+		scope:encounter_slave = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 5
+			}
+		}
+	}
+	option = {
+		name = slave_encounter.1006.c
+		stress_impact = { base = -5
+		}
+	}
+	option = {
+		name = slave_encounter.1006.d
+		stress_impact = { base = 0
+		}
+	}
+}
