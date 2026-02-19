@@ -7,6 +7,8 @@ slave_promotion_checker_pulse = {
 	trigger = {
 		is_ai = no
 		is_ruler = yes
+		NOT = { has_character_flag = slave_promotion_cooldown
+		}
 	}
 	effect = {
 		every_courtier_or_guest = {
@@ -33,12 +35,31 @@ slave_promotion_checker_pulse = {
 				if = {
 					limit = {
 						var:status_tier > 1999
+						root.var:concubine_slaves_count < root.var:max_concubine_slaves
 					}
 					# Promote to concubine
 					remove_character_flag = decorative_slave_flag
 					remove_character_flag = secondary_slave_flag
 					remove_character_flag = great_slave_flag
 					add_character_flag = { flag = concubine_slave_flag
+					}
+					root = {
+						remove_list_variable = {
+							name = decorative_slaves
+							target = prev
+						}
+						add_to_variable_list = {
+							name = concubine_slaves
+							target = prev
+						}
+						change_variable = {
+							name = decorative_slaves_count
+							add = -1
+						}
+						change_variable = {
+							name = concubine_slaves_count
+							add = 1
+						}
 					}
 				}
 			}
@@ -60,12 +81,31 @@ slave_promotion_checker_pulse = {
 				if = {
 					limit = {
 						var:status_tier > 2999
+						root.var:secondary_slaves_count < root.var:max_secondary_slaves
 					}
 					# Promote
 					remove_character_flag = decorative_slave_flag
 					remove_character_flag = concubine_slave_flag
 					remove_character_flag = great_slave_flag
 					add_character_flag = { flag = secondary_slave_flag
+					}
+					root = {
+						remove_list_variable = {
+							name = concubine_slaves
+							target = prev
+						}
+						add_to_variable_list = {
+							name = secondary_slaves
+							target = prev
+						}
+						change_variable = {
+							name = concubine_slaves_count
+							add = -1
+						}
+						change_variable = {
+							name = secondary_slaves_count
+							add = 1
+						}
 					}
 				}
 			}
@@ -87,12 +127,31 @@ slave_promotion_checker_pulse = {
 				if = {
 					limit = {
 						var:status_tier > 3999
+						root.var:great_slaves_count < root.var:max_great_slaves
 					}
 					# Promote
 					remove_character_flag = decorative_slave_flag
 					remove_character_flag = concubine_slave_flag
 					remove_character_flag = secondary_slave_flag
 					add_character_flag = { flag = great_slave_flag
+					}
+					root = {
+						remove_list_variable = {
+							name = secondary_slaves
+							target = prev
+						}
+						add_to_variable_list = {
+							name = great_slaves
+							target = prev
+						}
+						change_variable = {
+							name = secondary_slaves_count
+							add = -1
+						}
+						change_variable = {
+							name = great_slaves_count
+							add = 1
+						}
 					}
 				}
 			}
