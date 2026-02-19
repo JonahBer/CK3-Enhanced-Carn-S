@@ -160,6 +160,12 @@
 			value = 0
 		}
 	}
+	add = {
+		# age from 0 - 60s with max then of 10
+		# In traditional slavery, I think the older they were the more respect they got traditionally, might be wrong tho
+		value = age
+		multiply = 0.166
+	}
 	# Possibly either negative or positive (maybe)
 	add = {
 		value = ai_greed
