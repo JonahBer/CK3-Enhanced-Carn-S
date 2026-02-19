@@ -54,7 +54,7 @@
 										min_width = 330
 										text_single = {
 											parentanchor = top|hcenter
-											text = "[Character.GetNameNoTooltip] [Character.GetAge] ([Character.MakeScope.Var('status_tier').GetValue])"
+											text = "[Character.GetNameNoTooltip] [Character.GetAge]    [Character.MakeScope.Var('status_tier').GetValue](+[Character.MakeScope.Var('status_incremental_value').GetValue|0])"
 											align = center
 											fontsize = 21
 											max_width = 330
