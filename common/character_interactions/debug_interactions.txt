@@ -93,6 +93,28 @@ debug_set_tier_great_slave_flag = {
 	ai_potential = { always = no
 	}
 }
+debug_add_100_status = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_add_100_status_desc
+	on_accept = {
+		scope:recipient = {
+			change_variable = {
+				name = status_tier
+				add = 100
+			}
+		}
+	}
+	ai_potential = { always = no
+	}
+}
 spawn_slave_interaction = {
 	category = debug_main
 	use_diplomatic_range = no
