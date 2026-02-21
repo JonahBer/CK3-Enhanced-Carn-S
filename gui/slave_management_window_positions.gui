@@ -131,7 +131,7 @@
 				}
 			}
 			scrollbar_horizontal = {
-				using = Scrollbar_Horizontal
+				using = Slave_Scrollbar_Horizontal
 			}
 			scrollbarpolicy_horizontal = always_on
 			scrollbarpolicy_vertical = always_off
@@ -153,7 +153,7 @@
 			}
 		}
 		### Slave Position Group Foldouts ###
-		scrollbox = {
+		slave_scrollbox = {
 			using = Animation_Tab_Switch
 			layoutpolicy_horizontal = expanding
 			layoutpolicy_vertical = expanding

@@ -132,8 +132,8 @@
 	}
 	add = {
 		# ranges from -100 to 100 ?
-		# I dont think being anti social would hurt, but be social should help status increase
-		# For every 20 positive points they get 1 additional velocity
+		# I dont think being anti social would hurt, but being social should help status increase
+		# For every 20 positive points they get 1 additional velocity to their status
 		if = {
 			limit = {
 				ai_compassion > 0
@@ -179,7 +179,7 @@
 			}
 			# FAT
 			value = current_weight
-			multiply = -0.5
+			multiply = -0.7
 		}
 		else_if = {
 			limit = {
@@ -208,6 +208,23 @@
 			# WAY TO SKINNY
 			value = current_weight
 			multiply = 0.2
+		}
+	}
+	add = {
+		if = {
+			limit = {
+				fertility > high_fertility
+			}
+			value = 5
+		}
+		else_if {
+			limit = {
+				fertility < low_fertility
+			}
+			value = -5
+		}
+		else {
+			value = 2
 		}
 	}
 	#negative traits below
