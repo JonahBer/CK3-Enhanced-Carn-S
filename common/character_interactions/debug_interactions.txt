@@ -93,3 +93,111 @@ debug_set_tier_great_slave_flag = {
 	ai_potential = { always = no
 	}
 }
+debug_add_100_status = {
+	category = debug_main
+	common_interaction = yes
+	icon = debug_secret
+	ignores_pending_interaction_block = yes
+	use_diplomatic_range = no
+	is_shown = { always = yes
+	}
+	is_valid = { always = yes
+	}
+	desc = debug_add_100_status_desc
+	on_accept = {
+		scope:recipient = {
+			change_variable = {
+				name = status_tier
+				add = 100
+			}
+		}
+	}
+	ai_potential = { always = no
+	}
+}
+spawn_slave_interaction = {
+	category = debug_main
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+	icon = guest
+	interface_priority = -1
+	is_shown = {
+		debug_only = yes
+		scope:recipient = { is_ruler = yes
+		}
+	}
+	send_option = {
+		flag = diplomacy
+		localization = diplomacy
+	}
+	send_option = {
+		flag = martial
+		localization = martial
+	}
+	send_option = {
+		flag = stewardship
+		localization = stewardship
+	}
+	send_option = {
+		flag = intrigue
+		localization = intrigue
+	}
+	send_option = {
+		flag = learning
+		localization = learning
+	}
+	send_option = {
+		flag = prowess
+		localization = prowess
+	}
+	on_accept = {
+		switch = {
+			trigger = yes
+			scope:diplomacy = {
+				create_character = {
+					gender_female_chance = 100
+					age = { 15 21
+					}
+					random_traits = yes
+					culture = scope:recipient.culture
+					faith = scope:recipient.faith
+					location = scope:recipient.location
+					dynasty = none
+					save_scope_as = new_courtier
+					after_creation = {
+						# Owner Additions
+						scope:actor = {
+							set_relation_slave = scope:new_courtier
+						}
+						# Slave Additions
+						add_character_flag = decorative_slave_flag
+						add_character_flag = wearing_revealing_clothes_2
+						add_character_flag = decorative_slave_haircut
+						add_character_flag = blocked_from_leaving
+					}
+				}
+			}
+		}
+		scope:recipient = { custom_tooltip = spawn_courtier_interaction_tt
+		}
+		if = {
+			limit = { exists = scope:new_courtier
+			}
+			scope:recipient = {
+				hidden_effect = {
+					send_interface_toast = {
+						title = spawn_courtier_interaction_tt
+						left_icon = scope:new_courtier
+						right_icon = scope:actor
+						add_courtier = scope:new_courtier
+						hidden_effect = {
+							scope:new_courtier = { return_to_court = yes
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	auto_accept = yes
+}

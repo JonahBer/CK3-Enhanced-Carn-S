@@ -11,10 +11,61 @@ toggle_slave_management_window = {
 				clear_variable_list = concubine_slaves
 				clear_variable_list = secondary_slaves
 				clear_variable_list = great_slaves
+				set_variable = {
+					name = decorative_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = concubine_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = secondary_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = great_slaves_count
+					value = 0
+				}
 			}
 		}
 		else = {
 			set_variable = show_slave_management_window
+			root = {
+				set_variable = {
+					name = decorative_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = concubine_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = secondary_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = great_slaves_count
+					value = 0
+				}
+				# ── Tier cap initialization (reset every window open) ──
+				set_variable = {
+					name = max_decorative_slaves
+					value = 30
+				}
+				set_variable = {
+					name = max_concubine_slaves
+					value = 10
+				}
+				set_variable = {
+					name = max_secondary_slaves
+					value = 3
+				}
+				set_variable = {
+					name = max_great_slaves
+					value = 1
+				}
+			}
 			every_courtier_or_guest = {
 				limit = {
 					root = { has_relation_slave = prev
@@ -40,6 +91,10 @@ toggle_slave_management_window = {
 					add_to_variable_list = {
 						name = decorative_slaves
 						target = prev
+					}
+					change_variable = {
+						name = decorative_slaves_count
+						add = 1
 					}
 				}
 			}
@@ -69,6 +124,10 @@ toggle_slave_management_window = {
 						name = concubine_slaves
 						target = prev
 					}
+					change_variable = {
+						name = concubine_slaves_count
+						add = 1
+					}
 				}
 			}
 			every_courtier_or_guest = {
@@ -97,6 +156,10 @@ toggle_slave_management_window = {
 						name = secondary_slaves
 						target = prev
 					}
+					change_variable = {
+						name = secondary_slaves_count
+						add = 1
+					}
 				}
 			}
 			every_courtier_or_guest = {
@@ -117,6 +180,10 @@ toggle_slave_management_window = {
 					add_to_variable_list = {
 						name = great_slaves
 						target = prev
+					}
+					change_variable = {
+						name = great_slaves_count
+						add = 1
 					}
 				}
 			}
