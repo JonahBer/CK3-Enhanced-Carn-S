@@ -1,0 +1,7 @@
+﻿wearing_revealing_clothes_2_trigger = {
+	# Character must be an young adult.
+	exists = this
+	is_adult = yes
+	age >= 16
+	has_character_flag = wearing_revealing_clothes_2
+}

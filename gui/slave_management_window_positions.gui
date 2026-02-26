@@ -268,6 +268,25 @@
 							datamodel = "[GetPlayer.MakeScope.GetList('decorative_slaves')]"
 						}
 					}
+					### Fourth Row: Children Slaves ###
+					slave_tier_section = {
+						name = "Fourth  Row"
+						blockoverride "slave_tier_header_text" {
+							text_single = {
+								text = "Children Slaves ([GetPlayer.MakeScope.Var('child_slaves_count').GetValue|0] / [GetPlayer.MakeScope.Var('max_child_slaves').GetValue|0])"
+								parentanchor = vcenter
+								margin_left = 10
+								fontsize = 18
+							}
+						}
+						blockoverride "slave_tier_scroll_size" {
+							minimumsize = { 1250 700
+							}
+						}
+						blockoverride "slave_tier_datamodel" {
+							datamodel = "[GetPlayer.MakeScope.GetList('child_slaves')]"
+						}
+					}
 				}
 			}
 		}

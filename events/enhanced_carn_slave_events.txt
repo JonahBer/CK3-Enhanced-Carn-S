@@ -1,0 +1,32 @@
+﻿# Called from Carnalities file: on_action/carn_slave_on_actions.txt
+# Overwritting Carnalities function in events/carn_slave_events.txt
+#
+# 0003. Slave newborns get their owner relation
+#
+carn_slave.0003 = {
+	hidden = yes
+	trigger = {
+		scope:child = {
+			has_trait = slave
+		}
+	}
+	immediate = {
+		scope:mother = {
+			random_relation = {
+				type = slave_owner
+				save_scope_as = mother_owner
+			}
+		}
+		scope:child = {
+			set_relation_slave_owner = scope:mother_owner
+			# Added the below code
+			if = {
+				limit = {
+					# Check if female
+					gender = female
+				}
+				add_character_flag = child_slave_flag
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+﻿namespace = weight_monthly
+weight_monthly.0001 = {
+	type = character_event
+	hidden = yes
+	trigger = {
+		is_alive = yes
+		is_ai = no
+		is_ruler = yes
+	}
+	immediate = {
+		every_courtier_or_guest = {
+			limit = {
+				OR = {
+					has_character_flag = concubine_slave_flag
+					has_character_flag = decorative_slave_flag
+					has_character_flag = great_slave_flag
+					has_character_flag = secondary_slave_flag
+				}
+			}
+			weight_compute_and_store_incremental_value_effect = yes
+			weight_apply_increment_to_weight_effect = yes
+		}
+		# Re-trigger in 30 days for monthly cycle
+		trigger_event = {
+			id = weight_monthly.0001
+			days = 30
+		}
+	}
+}

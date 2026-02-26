@@ -1,0 +1,28 @@
+﻿weight_compute_and_store_incremental_value_effect = {
+	set_variable = {
+		name = weight_incremental_value
+		value = incremental_weight_value
+	}
+}
+weight_apply_increment_to_weight_effect = {
+	# assumes you already set var:weight_incremental_value this month
+	if = {
+		limit = { NOT = { var:weight_incremental_value = 0
+			}
+		}
+		if = {
+			limit = {
+				current_weight > 30
+			}
+			# FAT
+			change_current_weight = -2
+		}
+		else_if = {
+			limit = {
+				current_weight > 0
+			}
+			# Healthy
+			change_current_weight = -1
+		}
+	}
+}

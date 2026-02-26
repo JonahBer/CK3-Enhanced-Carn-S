@@ -7,31 +7,15 @@ toggle_slave_management_window = {
 			}
 			remove_variable = show_slave_management_window
 			root = {
+				clear_variable_list = child_slaves
 				clear_variable_list = decorative_slaves
 				clear_variable_list = concubine_slaves
 				clear_variable_list = secondary_slaves
 				clear_variable_list = great_slaves
 				set_variable = {
-					name = decorative_slaves_count
+					name = child_slaves_count
 					value = 0
 				}
-				set_variable = {
-					name = concubine_slaves_count
-					value = 0
-				}
-				set_variable = {
-					name = secondary_slaves_count
-					value = 0
-				}
-				set_variable = {
-					name = great_slaves_count
-					value = 0
-				}
-			}
-		}
-		else = {
-			set_variable = show_slave_management_window
-			root = {
 				set_variable = {
 					name = decorative_slaves_count
 					value = 0
@@ -50,6 +34,10 @@ toggle_slave_management_window = {
 				}
 				# ── Tier cap initialization (reset every window open) ──
 				set_variable = {
+					name = max_child_slaves
+					value = 100
+				}
+				set_variable = {
 					name = max_decorative_slaves
 					value = 30
 				}
@@ -64,6 +52,84 @@ toggle_slave_management_window = {
 				set_variable = {
 					name = max_great_slaves
 					value = 1
+				}
+			}
+		}
+		else = {
+			set_variable = show_slave_management_window
+			root = {
+				set_variable = {
+					name =	child_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = decorative_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = concubine_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = secondary_slaves_count
+					value = 0
+				}
+				set_variable = {
+					name = great_slaves_count
+					value = 0
+				}
+				# ── Tier cap initialization (reset every window open) ──
+				set_variable = {
+					name = max_child_slaves
+					value = 100
+				}
+				set_variable = {
+					name = max_decorative_slaves
+					value = 30
+				}
+				set_variable = {
+					name = max_concubine_slaves
+					value = 10
+				}
+				set_variable = {
+					name = max_secondary_slaves
+					value = 3
+				}
+				set_variable = {
+					name = max_great_slaves
+					value = 1
+				}
+			}
+			#Children
+			every_courtier_or_guest = {
+				limit = {
+					root = { has_relation_slave = prev
+					}
+					has_character_flag = child_slave_flag
+				}
+				remove_character_flag = decorative_slave_haircut
+				remove_character_flag = concubine_slave_haircut
+				remove_character_flag = secondary_slave_haircut
+				add_character_flag = blocked_from_leaving
+				if = {
+					limit = {
+						NOT = { exists = var:status_tier
+						}
+					}
+					set_variable = {
+						name = status_tier
+						value = 1
+					}
+				}
+				root = {
+					add_to_variable_list = {
+						name = child_slaves
+						target = prev
+					}
+					change_variable = {
+						name = child_slaves_count
+						add = 1
+					}
 				}
 			}
 			every_courtier_or_guest = {
@@ -187,7 +253,7 @@ toggle_slave_management_window = {
 					}
 				}
 			}
-			# Start monthly status loop
+			# Start monthly status loop (eventually should put this to start at character birth or new slave event)
 			if = {
 				limit = {
 					NOT = { has_character_flag = status_loop_running
@@ -196,6 +262,18 @@ toggle_slave_management_window = {
 				add_character_flag = status_loop_running
 				trigger_event = {
 					id = status_monthly.0001
+					days = 1
+				}
+			}
+			# Start monthly weight loop (if not running already)
+			if = {
+				limit = {
+					NOT = { has_character_flag = weight_loop_running
+					}
+				}
+				add_character_flag = weight_loop_running
+				trigger_event = {
+					id = weight_monthly.0001
 					days = 1
 				}
 			}
