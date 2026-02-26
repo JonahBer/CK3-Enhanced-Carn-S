@@ -763,35 +763,119 @@ characters={
 		roles={ spouse
 		}
 	}
+	# Secondaries Kneeling
 	{
-		position={ -150.000000 0.000000 500.000000
+		position={ -68.000000 0.000000 618.000000
 		}
 		direction=-30.000000
 		locator="character_flavor_slave_1"
 		description="Slave 1"
-		roles={ secondary_slaves low_prio_courtiers
+		roles={ secondary_slaves
 		}
 	}
 	{
-		position={ 150.000000 0.000000 500.000000
+		position={ 80.000000 0.000000 610.000000
 		}
-		direction=30.000000
+		direction=60.000000
 		locator="character_flavor_slave_2"
 		description="Slave 2"
-		roles={ secondary_slaves low_prio_courtiers
+		roles={ secondary_slaves
 		}
 	}
 	{
-		position={ -200.000000 0.000000 420.000000
+		position={ -112.398 0.000000 549.446
 		}
-		direction=-25.000000
+		direction=-77.000000
 		locator="character_flavor_slave_3"
 		description="Slave 3"
-		roles={ secondary_slaves low_prio_courtiers
+		roles={ secondary_slaves
 		}
 	}
 	{
-		position={ -99.999939 0.000000 660.000000
+		position={ 113.066 0.000000 545.358
+		}
+		direction=96.000000
+		locator="character_flavor_slave_4"
+		description="Slave 4"
+		roles={ secondary_slaves
+		}
+	}
+	# Right side concubines
+	{
+		position={ 154.27 0.000000 258.092
+		}
+		direction=25
+		locator="character_flavor_slave_4"
+		description="Slave 5"
+		roles={ concubine_slaves
+		}
+	}
+	{
+		position={ 154.27 0.000000 106.001
+		}
+		direction=25
+		locator="character_flavor_slave_4"
+		description="Slave 6"
+		roles={ concubine_slaves
+		}
+	}
+	{
+		position={ 154.27 0.000000 -36.001
+		}
+		direction=25
+		locator="character_flavor_slave_4"
+		description="Slave 7"
+		roles={ concubine_slaves
+		}
+	}
+	{
+		position={ 154.27 0.000000 -173.94
+		}
+		direction=25
+		locator="character_flavor_slave_4"
+		description="Slave 8"
+		roles={ concubine_slaves
+		}
+	}
+	# Left side concubines
+	{
+		position={ -154.27 0.000000 258.092
+		}
+		direction=-150
+		locator="character_flavor_slave_4"
+		description="Slave 5"
+		roles={ concubine_slaves
+		}
+	}
+	{
+		position={ -154.27 0.000000 106.001
+		}
+		direction=-150
+		locator="character_flavor_slave_4"
+		description="Slave 6"
+		roles={ concubine_slaves
+		}
+	}
+	{
+		position={ -154.27 0.000000 -36.001
+		}
+		direction=-150
+		locator="character_flavor_slave_4"
+		description="Slave 7"
+		roles={ concubine_slaves
+		}
+	}
+	{
+		position={ -154.27 0.000000 -173.94
+		}
+		direction=-150
+		locator="character_flavor_slave_4"
+		description="Slave 8"
+		roles={ concubine_slaves
+		}
+	}
+	{
+		position={ -213.999939 0.000000 589.000000
 		}
 		direction=-55.999981
 		locator="character_optional_adviser_heir"
@@ -818,7 +902,7 @@ characters={
 		}
 	}
 	{
-		position={ 250.000061 0.000000 720.000000
+		position={ 470.000061 0.000000 619.000000
 		}
 		direction=60.000000
 		locator="character_flavor_guard_2"
@@ -1090,7 +1174,7 @@ characters={
 		}
 	}
 	{
-		position={ 200.000061 0.000000 620.000000
+		position={ 300.000061 0.000000 600.000000
 		}
 		direction=15.000024
 		locator="character_councillor_2"
@@ -1123,7 +1207,7 @@ assets={ {
 		roles=ruler_throne
 	}
 	{
-		position={ 110.000061 0.000000 680.000000
+		position={ 190.000061 0.000000 680.000000
 		}
 		direction=0.000010
 		description="Throne"

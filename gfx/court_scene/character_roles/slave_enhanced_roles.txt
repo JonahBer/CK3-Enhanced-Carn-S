@@ -1,0 +1,60 @@
+﻿secondary_slaves = {
+	effect = {
+		scope:ruler = {
+			every_courtier = {
+				limit = {
+					has_character_flag = secondary_slave_flag
+				}
+				add_to_list = characters
+			}
+		}
+	}
+	scripted_animation = {
+		triggered_animation = {
+			trigger = { always = yes
+			}
+			animation = { throne_room_kneel_2
+			}
+		}
+	}
+}
+concubine_slaves = {
+	effect = {
+		scope:ruler = {
+			every_courtier = {
+				limit = {
+					has_character_flag = concubine_slave_flag
+				}
+				add_to_list = characters
+			}
+		}
+	}
+	scripted_animation = {
+		triggered_animation = {
+			trigger = { always = yes
+			}
+			animation = { sex_love_stand_1 sex_love_stand_2
+			}
+		}
+	}
+}
+decorative_slaves = {
+	effect = {
+		scope:ruler = {
+			every_courtier = {
+				limit = {
+					has_character_flag = decorative_slave_flag
+				}
+				add_to_list = characters
+			}
+		}
+	}
+	scripted_animation = {
+		triggered_animation = {
+			trigger = { always = yes
+			}
+			animation = { throne_room_kneel_1
+			}
+		}
+	}
+}

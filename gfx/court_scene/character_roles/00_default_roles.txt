@@ -1147,26 +1147,6 @@ secondary_spouses = {
 		}
 	}
 }
-secondary_slaves = {
-	effect = {
-		scope:ruler = {
-			every_courtier = {
-				limit = {
-					has_character_flag = secondary_slave_flag
-				}
-				add_to_list = characters
-			}
-		}
-	}
-	scripted_animation = {
-		triggered_animation = {
-			trigger = { always = yes
-			}
-			animation = { throne_room_kneel_1
-			}
-		}
-	}
-}
 court_children = {
 	effect = {
 		scope:ruler = {
